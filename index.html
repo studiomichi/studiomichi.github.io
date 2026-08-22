@@ -8,6 +8,17 @@
       name="description"
       content="Studio Michi is a Seattle-based floral design studio offering curated bouquets and arrangements for people, events, and spaces."
     />
+
+    <script>
+      (function () {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+
+        if (redirect && redirect !== window.location.href) {
+          window.history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
