@@ -1,15 +1,17 @@
 import { NavLink } from 'react-router-dom';
 
 const links = [
-  { to: '/', label: 'Home' },
-  { to: '/services', label: 'Services' },
+  { to: '/services', label: 'Shop Flowers' },
+  { to: '/ceramics', label: 'Ceramics' },
   { to: '/contact', label: 'Contact' },
 ];
 
 export default function NavBar() {
   return (
     <header className="nav-bar">
-      <div className="brand">Studio Michi</div>
+      <NavLink to="/" className="brand">
+        Studio Michi
+      </NavLink>
       <nav>
         {links.map((link) => (
           <NavLink
