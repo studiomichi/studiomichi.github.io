@@ -23,7 +23,7 @@ export default function Ceramics() {
         <p className="eyebrow">Small-batch ceramics</p>
         <h1>Ceramics</h1>
         <p>
-          I occasionally make hand-thrown ceramic pieces. Because these are in small batches, they are only available at a limited number of markets/pop-ups. Follow <b><a href="https://www.instagram.com/studiomichi/" target="_blank" rel="noopener noreferrer">Studio Michi on Instagram</a></b> for the latest updates!
+          I occasionally make hand-thrown ceramic pieces. Because these are in small batches, they are only available at a limited number of markets/pop-ups. Follow <b><a href="https://www.instagram.com/studiomichico/" target="_blank" rel="noopener noreferrer">Studio Michi on Instagram</a></b> for the latest updates!
         </p>
         <p>
           Our next pop-up will be on <b>October 10th, 2026 from 11am - 4pm</b> at <b><a href="https://maps.app.goo.gl/p4prUh28AcKKkWrx9" target="_blank" rel="noopener noreferrer">Silken Ceramics (853 Hiawatha Pl S, Seattle, WA 98144)</a></b>!
