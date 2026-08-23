@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Home() {
   const galleryImages = [
     {
@@ -32,7 +34,7 @@ export default function Home() {
         <div className="hero-overlay">
           <p className="brand-slogan">whimsical blooms for everyday moments</p>
           <div className="hero-actions">
-            <a className="button" href="/services">view flower offerings &rarr;</a>
+            <Link className="button" to="/services">view flower offerings &rarr;</Link>
           </div>
         </div>
       </div>
@@ -48,7 +50,7 @@ export default function Home() {
             Jenn is the floral designer and owner behind Studio Michi. What began as a love for creating with her hands has grown into a studio rooted in artistry, nature and the joy of making something beautiful.
           </p>
           <p>The name, Studio Michi, came from a desire to honor both her creative path and her love for cats (specifically her first cat, Mia). After considering multiple options, Jenn stumbled upon the word, <i>michi</i>. In Japanese, <i>michi</i>, (and the Chinese character for it, 道) means "path", a fitting name for her studio path. Coincidentally, <i>michi</i> is also an informal Spanish word used to refer to a "cat", making the name a serendipitous choice.</p><br/>
-          <a className="button" href="/services">view flower offerings &rarr;</a>
+          <Link className="button" to="/services">view flower offerings &rarr;</Link>
         </div>
 
         <div className="story-visual">
