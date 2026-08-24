@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import { flowerOrderHref, studioEmailAddress } from '../utils/contactEmail';
+import { trackEvent } from '../utils/gtag';
 
 const footerLinks = [
   { to: '/', label: 'Home' },
@@ -16,7 +17,11 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-contact-column">
         <span className="brand">Studio Michi</span>
-        <a className="footer-email" href={flowerOrderHref}>
+        <a
+          className="footer-email"
+          href={flowerOrderHref}
+          onClick={() => trackEvent('email_click', 'footer', 'Flower order email', { destination: flowerOrderHref })}
+        >
           {studioEmailAddress}
         </a>
         <div className="footer-socials">
@@ -26,6 +31,7 @@ export default function Footer() {
             rel="noreferrer"
             aria-label="Visit Studio Michi on Instagram"
             className="social-media-link"
+            onClick={() => trackEvent('social_click', 'footer', 'Instagram', { destination: 'https://www.instagram.com/studiomichico' })}
           >
             <InstagramIcon fontSize="inherit" />
           </a>
@@ -35,6 +41,7 @@ export default function Footer() {
             rel="noreferrer"
             aria-label="Visit Studio Michi on Pinterest"
             className="social-media-link"
+            onClick={() => trackEvent('social_click', 'footer', 'Pinterest', { destination: 'https://www.pinterest.com/studiomichi' })}
           >
             <PinterestIcon fontSize="inherit" />
           </a>
@@ -45,7 +52,11 @@ export default function Footer() {
         <ul className="footer-nav-list">
           {footerLinks.map((link) => (
             <li key={link.to}>
-              <NavLink to={link.to} className="footer-link">
+              <NavLink
+                to={link.to}
+                className="footer-link"
+                onClick={() => trackEvent('navigation_click', 'footer_nav', link.label, { destination: link.to })}
+              >
                 {link.label}
               </NavLink>
             </li>

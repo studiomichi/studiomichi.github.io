@@ -8,6 +8,7 @@ import Ceramics from './pages/Ceramics';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
 import PageNotFound from './pages/PageNotFound';
+import { trackPageView, trackEvent } from './utils/gtag';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -15,6 +16,7 @@ function App() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    trackPageView(location.pathname);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -26,6 +28,37 @@ function App() {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      const target = event.target.closest('a, button');
+      if (!target) return;
+
+      const href = target.getAttribute('href');
+      const label = target.textContent?.trim() || target.getAttribute('aria-label') || target.name || 'unnamed';
+      const isExternal = !!href && /^(https?:)?\/\//i.test(href);
+
+      if (target.tagName === 'BUTTON') {
+        trackEvent('button_click', 'ui', label, { target: target.className || 'button' });
+        return;
+      }
+
+      if (href) {
+        trackEvent(
+          isExternal ? 'link_click' : 'navigation_click',
+          isExternal ? 'external_link' : 'internal_link',
+          label,
+          {
+            destination: href,
+          }
+        );
+      }
+    };
+
+    document.addEventListener('click', handleClick);
+
+    return () => document.removeEventListener('click', handleClick);
   }, []);
 
   return (
