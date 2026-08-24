@@ -1,27 +1,20 @@
 export const studioEmailAddress = 'studiomichico@gmail.com';
 
+function formatMailtoBody(lines) {
+  return lines.join('\n\n');
+}
+
 // Flower order email content
 export const flowerOrderInquiry = {
   subject: 'Flower Order Inquiry',
   label: 'Email for flower orders',
   buttonLabel: 'Inquire',
-  body: `All orders are available for scheduled complimentary pick-up in Seattle/Central District (Wednesday - Saturday between 10am - 7pm) or delivery within 10 miles of the studio (Friday - Saturday between 10am - 1pm). Delivery outside of this location and time range is available for a fee (starting from $10 based on zip code). We recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.
-
-          Note that due to the perishable nature of our work, all sales are final.
-
-          Please respond with the following to start your flower order:
-          Full name:
-          Preferred email:
-          Phone:
-          How'd you hear about me?:
-
-          Bouquet or arrangement?:
-          Classic or signature?:
-          Color preferences (if any):
-          Flower preferences (dependent on market availability):
-          Pick-up or delivery (if delivery, please provide delivery address and any special notes on access):
-          Pick-up or delivery date/time:
-          Additional notes or requests:`,
+  body: formatMailtoBody([
+    'All orders are available for scheduled complimentary pick-up in Seattle/Central District (Wednesday - Saturday between 10am - 7pm) or delivery within 10 miles of the studio (Friday - Saturday between 10am - 1pm). Delivery outside of this location and time range is available for a fee (starting from $10 based on zip code). We recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.',
+    'Note that due to the perishable nature of our work, all sales are final.',
+    'Please respond with the following to start your flower order:\nFull name:\nPreferred email:\nPhone:\nHow\'d you hear about me?:',
+    'Bouquet or arrangement?:\nClassic or signature?:\nColor preferences (if any):\nFlower preferences (dependent on market availability):\nPick-up or delivery (if delivery, please provide delivery address and any special notes on access):\nPick-up or delivery date/time:\nAdditional notes or requests:'
+  ]),
 };
 
 // Flower collab email content
@@ -29,13 +22,10 @@ export const flowerCollabInquiry = {
   subject: 'Special Flower Inquiry',
   label: 'Email for special order inquiries',
   buttonLabel: 'Inquire',
-  body: `Full name:
-          Preferred email:
-          Phone:
-          How'd you hear about me?:
-
-          Please share details about your event or special order:
-          When will you need the flowers?:`,
+  body: formatMailtoBody([
+    'Full name:\nPreferred email:\nPhone:\nHow\'d you hear about me?:',
+    'Please share details about your event or special order:\nWhen will you need the flowers?:'
+  ]),
 };
 
 // General email content

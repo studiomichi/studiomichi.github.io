@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { trackEvent } from '../utils/gtag';
 
 const links = [
   { to: '/services', label: 'Shop Flowers' },
@@ -18,6 +19,7 @@ export default function NavBar() {
             key={link.to}
             to={link.to}
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+            onClick={() => trackEvent('navigation_click', 'nav', link.label, { destination: link.to })}
           >
             {link.label}
           </NavLink>

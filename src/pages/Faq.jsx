@@ -18,11 +18,7 @@ export default function Faq() {
     // },
     {
       question: 'What flowers will I receive?',
-      answer: 'While we\'ll try to accommodate any flower preferences, the overall selection of flowers is designer\'s choice based on your color palette preferences, and seasonal (e.g., peonies in late spring, dahlias in late summer/fall, etc) and market availability.',
-    },
-    {
-        question: 'What color of flowers do you offer?',
-        answer: 'We offer a variety of natural, thoughtfully curated color palettes, from soft pastels and monochromatic tones to harmonious analogous color combinations. Color options may vary based on seasonal and market availability. If you have specific color preferences, please include that in your inquiry and we\'ll do our best to accommodate.',
+      answer: 'While we\'ll try to accommodate any flower preferences, the overall selection of flowers is designer\'s choice based on your color palette preferences, and seasonal (e.g., peonies in late spring, dahlias in late summer/fall, etc) and market availability. We offer a variety of natural, thoughtfully curated color palettes, from soft pastels, neutrals, and monochromatic tones to harmonious analogous color combinations. If you have specific color preferences, please include that in your inquiry and we\'ll do our best to accommodate.',
     },
     {
       question: 'How long do the flowers last?',
