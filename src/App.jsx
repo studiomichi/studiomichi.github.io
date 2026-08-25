@@ -10,11 +10,21 @@ import Faq from './pages/Faq';
 import PageNotFound from './pages/PageNotFound';
 import { trackPageView, trackEvent } from './utils/gtag';
 
+const pageTitles = {
+  '/': 'Studio Michi - Home',
+  '/services': 'Studio Michi - Flower Offerings',
+  '/ceramics': 'Studio Michi - Ceramics',
+  '/contact': 'Studio Michi - Contact',
+  '/faq': 'Studio Michi - FAQ',
+};
+
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+    const title = pageTitles[location.pathname] || 'Studio Michi - Page Not Found';
+    document.title = title;
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     trackPageView(location.pathname);
   }, [location.pathname]);
@@ -30,6 +40,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Global click event listener to track clicks on links and buttons
   useEffect(() => {
     const handleClick = (event) => {
       const target = event.target.closest('a, button');
@@ -39,20 +50,18 @@ function App() {
       const label = target.textContent?.trim() || target.getAttribute('aria-label') || target.name || 'unnamed';
       const isExternal = !!href && /^(https?:)?\/\//i.test(href);
 
+      const normalizedLabel = label.replace(/\s+/g, '');
+
       if (target.tagName === 'BUTTON') {
-        trackEvent('button_click', 'ui', label, { target: target.className || 'button' });
+        trackEvent(`button_click_${normalizedLabel}`, 'ui', { target: target.className || 'button' });
         return;
       }
 
       if (href) {
-        trackEvent(
-          isExternal ? 'link_click' : 'navigation_click',
-          isExternal ? 'external_link' : 'internal_link',
-          label,
-          {
-            destination: href,
-          }
-        );
+        const eventName = isExternal ? `external_link_click_${normalizedLabel}` : `navigation_click_${normalizedLabel}`;
+        trackEvent(eventName, isExternal ? 'external_link' : 'internal_link', {
+          destination: href,
+        });
       }
     };
 
