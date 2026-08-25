@@ -58,6 +58,11 @@ export default function Home() {
             src="/images/profile-image.jpg"
             alt="Jenn, the owner of Studio Michi, with a peony bouquet."
             className="story-image"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            width="430"
+            height="537"
           />
         </div>
       </div>
@@ -69,6 +74,11 @@ export default function Home() {
             src={galleryImages[(index - 1) % galleryImages.length].src}
             alt={galleryImages[(index - 1) % galleryImages.length].alt}
             className="home-gallery-image"
+            loading={index <= 2 ? 'eager' : 'lazy'}
+            decoding="async"
+            fetchPriority={index <= 2 ? 'high' : 'low'}
+            width="300"
+            height="350"
           />
         ))}
       </div>
