@@ -19,12 +19,12 @@ export const flowerOrderInquiry = {
 
 // Flower collab email content
 export const flowerCollabInquiry = {
-  subject: 'Special Flower Inquiry',
-  label: 'Email for special order inquiries',
+  subject: 'Event/Collab Inquiry',
+  label: 'Email for event or collaboration inquiries',
   buttonLabel: 'Inquire',
   body: formatMailtoBody([
     'Full name:\nPreferred email:\nPhone:\nHow\'d you hear about me?:',
-    'Please share details about your event or special order:\nWhen will you need the flowers?:'
+    'Please share details about your event or collaboration:\nWhen will you need the flowers?:'
   ]),
 };
 

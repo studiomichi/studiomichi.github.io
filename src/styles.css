@@ -113,11 +113,11 @@ span a:not(.button):not(.nav-link):not(.brand):not(.footer-link):not(.footer-ema
 
 .mobile-nav-toggle {
   display: none;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: none;
   background: transparent;
-  padding: 0.3rem;
+  padding: 0.4rem;
   cursor: pointer;
   align-self: center;
 }
@@ -200,10 +200,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 0.35rem;
-    padding: 0.15rem;
-    height: 2rem;
-    width: 2rem;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+    height: 2.25rem;
+    width: 2.25rem;
     flex-shrink: 0;
     order: 2;
   }

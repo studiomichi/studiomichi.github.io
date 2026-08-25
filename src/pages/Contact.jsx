@@ -12,15 +12,15 @@ export default function Contact() {
       <div>
         <h2>For flower orders</h2>
         <p>Reach out with your contact information, desired bouquet or arrangement style (classic or signature), any specific color/flower preferences, and your preferred pick-up or delivery date.</p>
-        <a className="button contact-button" href={flowerOrderHref}>
+        <a className="button contact-button" href={flowerOrderHref} aria-label="Email Studio Michi for flower orders">
           {flowerOrderInquiry.label}
         </a>
       </div>
 
       <div>
-        <h2>For events, collaborations or special orders</h2>
-        <p>Reach out with your contact information and details about pop-ups, your event or collaboration idea, or if you're interested in ordering custom arrangements for your shop or business.</p>
-        <a className="button contact-button" href={flowerCollabHref}>
+        <h2>For events or collaborations</h2>
+        <p>Reach out with your contact information and details about pop-ups, your event or collaboration idea.</p>
+        <a className="button contact-button" href={flowerCollabHref} aria-label="Email Studio Michi for event or collaboration inquiries">
           {flowerCollabInquiry.label}
         </a>
       </div>
@@ -28,7 +28,7 @@ export default function Contact() {
       <div>
         <h2>For general inquiries</h2>
         <p>Reach out with any questions you may have.</p>
-        <a className="button contact-button" href={generalInquiryHref}>
+        <a className="button contact-button" href={generalInquiryHref} aria-label="Email Studio Michi with a general question">
           {generalInquiry.label}
         </a>
       </div>
