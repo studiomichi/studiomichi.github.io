@@ -10,11 +10,21 @@ import Faq from './pages/Faq';
 import PageNotFound from './pages/PageNotFound';
 import { trackPageView, trackEvent } from './utils/gtag';
 
+const pageTitles = {
+  '/': 'Studio Michi - Home',
+  '/services': 'Studio Michi - Flower Offerings',
+  '/ceramics': 'Studio Michi - Ceramics',
+  '/contact': 'Studio Michi - Contact',
+  '/faq': 'Studio Michi - FAQ',
+};
+
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+    const title = pageTitles[location.pathname] || 'Studio Michi - Page Not Found';
+    document.title = title;
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     trackPageView(location.pathname);
   }, [location.pathname]);

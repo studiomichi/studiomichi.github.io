@@ -55,7 +55,7 @@ export default function Footer() {
               <NavLink
                 to={link.to}
                 className="footer-link"
-                onClick={() => trackEvent('navigation_click', 'footer_nav', link.label, { destination: link.to })}
+                onClick={() => trackEvent('navigation_click', 'footer', link.label, { destination: link.to })}
               >
                 {link.label}
               </NavLink>
