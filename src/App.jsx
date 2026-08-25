@@ -40,6 +40,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Global click event listener to track clicks on links and buttons
   useEffect(() => {
     const handleClick = (event) => {
       const target = event.target.closest('a, button');
@@ -49,14 +50,17 @@ function App() {
       const label = target.textContent?.trim() || target.getAttribute('aria-label') || target.name || 'unnamed';
       const isExternal = !!href && /^(https?:)?\/\//i.test(href);
 
+      const normalizedLabel = label.replace(/\s+/g, '');
+
       if (target.tagName === 'BUTTON') {
-        trackEvent('button_click', 'ui', label, { target: target.className || 'button' });
+        trackEvent(`button_click_${normalizedLabel}`, 'ui', label, { target: target.className || 'button' });
         return;
       }
 
       if (href) {
+        const eventName = isExternal ? `external_link_click_${normalizedLabel}` : `navigation_click_${normalizedLabel}`;
         trackEvent(
-          isExternal ? 'link_click' : 'navigation_click',
+          eventName,
           isExternal ? 'external_link' : 'internal_link',
           label,
           {
