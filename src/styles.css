@@ -59,10 +59,24 @@ a {
   font: inherit;
 }
 
+a,
+button {
+  outline: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-accent-strong);
+  outline-offset: 3px;
 }
 
 p a:not(.button):not(.nav-link):not(.brand):not(.footer-link):not(.footer-email):not(.service-pill),
@@ -113,11 +127,11 @@ span a:not(.button):not(.nav-link):not(.brand):not(.footer-link):not(.footer-ema
 
 .mobile-nav-toggle {
   display: none;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: none;
   background: transparent;
-  padding: 0.3rem;
+  padding: 0.4rem;
   cursor: pointer;
   align-self: center;
 }
@@ -200,10 +214,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 0.35rem;
-    padding: 0.15rem;
-    height: 2rem;
-    width: 2rem;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+    height: 2.25rem;
+    width: 2.25rem;
     flex-shrink: 0;
     order: 2;
   }
@@ -455,6 +469,20 @@ select {
 .button:hover {
   transform: translateY(-1px);
   background: var(--color-accent-stronger);
+}
+
+.button:focus-visible,
+.nav-link:focus-visible,
+.footer-link:focus-visible,
+.footer-email:focus-visible,
+.social-media-link:focus-visible,
+.service-pill:focus-visible,
+.mobile-nav-toggle:focus-visible,
+.carousel-button:focus-visible,
+.carousel-dot:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid var(--color-accent-strong);
+  outline-offset: 3px;
 }
 
 .hero-actions .button {

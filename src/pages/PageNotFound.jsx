@@ -7,7 +7,7 @@ export default function PageNotFound() {
         <p className="eyebrow">Page not found</p>
         <p>We couldn’t find the page you were looking for.</p>
         <div className="page-not-found-actions">
-          <Link to="/services" className="button">
+          <Link to="/services" className="button" aria-label="Back to flower offerings">
             Back to flower offerings &rarr;
           </Link>
         </div>
