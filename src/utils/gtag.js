@@ -1,4 +1,4 @@
-export function trackEvent(action, category, _label, extraData = {}) {
+export function trackEvent(action, category, extraData = {}) {
   if (typeof window === 'undefined' || !window.gtag) {
     return;
   }

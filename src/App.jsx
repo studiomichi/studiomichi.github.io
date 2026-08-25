@@ -53,20 +53,15 @@ function App() {
       const normalizedLabel = label.replace(/\s+/g, '');
 
       if (target.tagName === 'BUTTON') {
-        trackEvent(`button_click_${normalizedLabel}`, 'ui', label, { target: target.className || 'button' });
+        trackEvent(`button_click_${normalizedLabel}`, 'ui', { target: target.className || 'button' });
         return;
       }
 
       if (href) {
         const eventName = isExternal ? `external_link_click_${normalizedLabel}` : `navigation_click_${normalizedLabel}`;
-        trackEvent(
-          eventName,
-          isExternal ? 'external_link' : 'internal_link',
-          label,
-          {
-            destination: href,
-          }
-        );
+        trackEvent(eventName, isExternal ? 'external_link' : 'internal_link', {
+          destination: href,
+        });
       }
     };
 
