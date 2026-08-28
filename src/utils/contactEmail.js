@@ -7,7 +7,7 @@ function formatMailtoBody(lines) {
 // Flower order email content
 export const flowerOrderInquiry = {
   subject: 'Flower Order Inquiry',
-  label: 'Email for flower orders',
+  label: 'Flower order form',
   buttonLabel: 'Inquire',
   body: formatMailtoBody([
     'Please respond with the following to start your flower order:\nFull name:\nPreferred email:\nPhone:\nHow\'d you hear about me?:',
@@ -36,10 +36,12 @@ export const generalInquiry = {
   body: ``,
 };
 
-export const flowerOrderHref = buildMailtoLink({
-  subject: flowerOrderInquiry.subject,
-  body: flowerOrderInquiry.body,
-});
+// export const flowerOrderHref = buildMailtoLink({
+//   subject: flowerOrderInquiry.subject,
+//   body: flowerOrderInquiry.body,
+// });
+
+export const flowerOrderHref = 'https://forms.gle/h1W7MgCtVth4PZSr9';
 
 export const flowerCollabHref = buildMailtoLink({
   subject: flowerCollabInquiry.subject,

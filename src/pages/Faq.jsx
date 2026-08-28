@@ -5,6 +5,10 @@ export default function Faq() {
       answer: 'We recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance. We\'ll do our best to accommodate flower preferences, but may be restricted to market availability.',
     },
     {
+      question: 'What\'s the ordering process?',
+      answer: 'Our inquiry link will take you to our flower order form. Please complete and submit the form and we\'ll get back to you within 1-3 days about your order, discuss any preferences and limitations and send the payment details. Once payment is received, we\'ll confirm your order and schedule your pick-up or delivery date and time.',
+    },
+    {
       question: 'Where do you deliver?',
       answer: 'We offer complimentary delivery within 10 miles of our studio near Central District (Friday - Saturday between 10am - 1pm). For delivery outside of this location and time range, a fee may apply (starting from $10 based on zip code). All orders are available for scheduled complimentary pick-up from our studio (Wednesday - Saturday between 10am - 7pm).',
     },
