@@ -6,13 +6,13 @@ export default function Contact() {
       <div className="section-header">
         <p className="eyebrow">Let's talk flowers</p>
         <h1>Contact</h1>
-        <p>Send an email to <b>{studioEmailAddress}</b> to place a one-time or subscription order, inquire about pop-up events or collaborations, or if you just have a question! We'll get back to you within 24-48 hours. For a quicker response, DM us on <b><a href="https://www.instagram.com/studiomichico/" target="_blank" rel="noopener noreferrer">Instagram</a></b>!</p>
+        <p>Send an email to <b>{studioEmailAddress}</b> to place a one-time or subscription order, inquire about pop-up events or collaborations, or if you just have a question! We'll get back to you within 1-3 days. For a quicker response, DM us on <b><a href="https://www.instagram.com/studiomichico/" target="_blank" rel="noopener noreferrer">Instagram</a></b>!</p>
       </div>
 
       <div>
         <h2>For flower orders</h2>
         <p>Reach out with your contact information, desired bouquet or arrangement style (classic or signature), any specific color/flower preferences, and your preferred pick-up or delivery date.</p>
-        <a className="button contact-button" href={flowerOrderHref} aria-label="Email Studio Michi for flower orders">
+        <a className="button contact-button" href={flowerOrderHref} target="_blank" rel="noopener noreferrer" aria-label="Open the flower order form in a new tab">
           {flowerOrderInquiry.label}
         </a>
       </div>
