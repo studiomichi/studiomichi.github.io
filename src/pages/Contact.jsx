@@ -11,7 +11,7 @@ export default function Contact() {
 
       <div>
         <h2>For flower orders</h2>
-        <p>Reach out with your contact information, desired bouquet or arrangement style (classic or signature), any specific color/flower preferences, and your preferred pick-up or delivery date.</p>
+        <p>Fill out our flower order form with your contact information, desired bouquet or arrangement style (classic or signature), any specific color/flower preferences, and your preferred pick-up or delivery date.</p>
         <a className="button contact-button" href={flowerOrderHref} target="_blank" rel="noopener noreferrer" aria-label="Open the flower order form in a new tab">
           {flowerOrderInquiry.label}
         </a>
