@@ -6,7 +6,7 @@ export default function Contact() {
       <div className="section-header">
         <p className="eyebrow">Let's talk flowers</p>
         <h1>Contact</h1>
-        <p>Send an email to <b>{studioEmailAddress}</b> to place a one-time or subscription order, inquire about pop-up events or collaborations, or if you just have a question! We'll get back to you within 1-3 days. For a quicker response, DM us on <b><a href="https://www.instagram.com/studiomichico/" target="_blank" rel="noopener noreferrer">Instagram</a></b>!</p>
+        <p>For flower orders, please fill out and submit our flower order form. For any other inquiries, send us an email at <b>{studioEmailAddress}</b>. We'll get back to you within 1-3 days. For a quicker response, DM us on <b><a href="https://www.instagram.com/studiomichico/" target="_blank" rel="noopener noreferrer">Instagram</a></b>!</p>
       </div>
 
       <div>
