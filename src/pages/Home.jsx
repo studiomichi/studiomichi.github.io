@@ -49,7 +49,7 @@ export default function Home() {
           <p>
             Jenn is the floral designer and owner behind Studio Michi. What began as a love for creating with her hands has grown into a studio rooted in artistry, nature and the joy of making something beautiful.
           </p>
-          <p>The name, Studio Michi, came from a desire to honor both her creative path and her love for cats (specifically her first cat, Mia). After considering multiple options, Jenn stumbled upon the word, <i>michi</i>. In Japanese, <i>michi</i>, (and the Chinese character for it, 道) means "path", a fitting name for her studio path. Coincidentally, <i>michi</i> is also an informal Spanish word used to refer to a "cat", making the name a serendipitous choice.</p><br/>
+          <p>The name, Studio Michi, came from a desire to honor both her creative path and her love for cats (specifically her first cat, a foster-fail and one-eyed Siamese kitten, Mia). After considering multiple options, Jenn stumbled upon the word, <i>michi</i>. In Japanese, <i>michi</i>, (and the Chinese character for it, 道) means "path", a fitting name for her studio path. Coincidentally, <i>michi</i> is also an informal Spanish word used to refer to a "cat", making the name a serendipitous choice.</p><br/>
           <Link className="button" to="/services" aria-label="View flower offerings from story section">view flower offerings &rarr;</Link>
         </div>
 

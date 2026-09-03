@@ -2,14 +2,17 @@ import { useState } from 'react';
 import { flowerOrderHref, flowerOrderInquiry } from '../utils/contactEmail';
 
 const orderDeliveryNote =
-  '<p>All orders are available for scheduled complimentary pick-up in Seattle/Central District (Wednesday - Saturday between 10am - 7pm) or delivery within 10 miles of the studio (Friday - Saturday between 10am - 1pm). Delivery outside of this location and time range is available for a fee (starting from $10 based on zip code). We recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.</p><br/><p><b>Note that due to the perishable nature of our work, all sales are final.</b></p>';
+  '<p>All orders are available for scheduled complimentary pick-up in Seattle/Central District (Thursday - Saturday between 10am - 7pm) or delivery within 10 miles of the studio (Friday - Saturday between 10am - 1pm). Delivery outside of this location and time range is available for a fee (starting from $10 based on zip code). Each arrangement is made to order with fresh blooms, so we recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.</p><br/><p><b>Note that due to the perishable nature of our work, all sales are final.</b></p>';
+
+const preferenceNote =
+  'While we\'ll try to accomodate any flower preferences, the overall selection of flowers is designer\'s choice based on your color palette preferences, and seasonal and market availability. The example photos shown are for reference only on style and size. The final arrangement will be unique to your order.';
 
 const serviceItems = [
   {
     id: 'bouquets',
     title: 'Bouquets',
     description:
-      `<p>Our hand-tied bouquets feature a mix of fresh seasonal and premium blooms intentionally designed for you. Each bouquet is wrapped in water-resistant paper with a ribbon and comes in our flower bag with an aqua box. While we\'ll try to accomodate any flower preferences, the overall  selection of flowers is designer\'s choice based on your color palette preferences, and seasonal and market availability.</p><br/><ul><li><b>Classic (starting from $130)</b>: Our just-because bouquet full of seasonal blooms to bring a little joy and beauty into everyday moments.</li><li><b>Signature (starting from $180)</b>: Our signature bouquet featuring a beautiful mix of seasonal and premium blooms, thoughtfully designed to make someone feel truly special.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Open the bouquet order form in a new tab">${flowerOrderInquiry.buttonLabel}</a>`,
+      `<p>Our hand-tied bouquets feature a mix of fresh seasonal and premium blooms intentionally designed for you. Each bouquet is wrapped in water-resistant paper with a ribbon and comes in our flower bag with a water box. ${preferenceNote}</p><br/><ul><li><b>Classic (starting from $130)</b>: Our just-because bouquet full of seasonal blooms to bring a little joy and beauty into everyday moments.</li><li><b>Signature (starting from $180)</b>: Our signature bouquet featuring a beautiful mix of seasonal and premium blooms, thoughtfully designed to make someone feel truly special.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Open the bouquet order form in a new tab">${flowerOrderInquiry.buttonLabel}</a>`,
     images: [
       {
         src: '/images/orange-summer-bouquet1.png',
@@ -22,9 +25,9 @@ const serviceItems = [
         caption: 'Classic bouquet',
       },
       {
-        src: '/images/green-sunflower-bouquet.jpg',
-        alt: 'A classic bouquet with greenery and sunflowers.',
-        caption: 'Classic bouquet',
+        src: '/images/pastel-signature-bouquet.jpg',
+        alt: 'A colorful and pastel signature bouquet with roses, lisianthus and carnations.',
+        caption: 'Signature bouquet',
       },
     ],
   },
@@ -32,7 +35,7 @@ const serviceItems = [
     id: 'arrangements',
     title: 'Arrangements',
     description:
-      `<p>Our floral arrangements are curated for your space and moment. Each arrangement features a mix of fresh seasonal and premium blooms designed in a ceramic or glass vase. While we\'ll try to accomodate any flower preferences, the overall  selection of flowers is designer\'s choice based on your color palette preferences, and seasonal and market availability.</p><br/><ul><li><b>Classic (starting from $150)</b>: Our classic arrangement of fresh blooms designed to brighten your space.</li><li><b>Signature (starting from $200)</b>: Our signature arrangement curated to complement your space with an elevated aesthetic.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Open the arrangement order form in a new tab">${flowerOrderInquiry.buttonLabel}</a>`,
+      `<p>Our floral arrangements are curated for your space and moment. Each arrangement features a mix of fresh seasonal and premium blooms designed in a ceramic or glass vase. ${preferenceNote}</p><br/><ul><li><b>Classic (starting from $150)</b>: Our classic arrangement of fresh blooms designed to brighten your space.</li><li><b>Signature (starting from $200)</b>: Our signature arrangement curated to elevate your space.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Open the arrangement order form in a new tab">${flowerOrderInquiry.buttonLabel}</a>`,
     images: [
       {
         src: '/images/pink-peony-arrangement.jpg',
@@ -45,9 +48,9 @@ const serviceItems = [
         caption: 'Classic arrangement',
       },
       {
-        src: '/images/wild-sunflower-arrangement3.jpg',
+        src: '/images/rose-dahlia-classic-arrangement.jpg',
         alt: 'A signature arrangement of wild sunflowers and greenery.',
-        caption: 'Signature arrangement',
+        caption: 'Classic arrangement',
       },
     ],
   },
@@ -144,7 +147,7 @@ export default function Services() {
         {serviceItems.map((item) => (
           <article key={item.id} id={item.id} className="section-card service-detail-card">
             <div className="service-detail-copy">
-              <h2>{item.title}</h2>
+              <h3>{item.title}</h3>
               <div dangerouslySetInnerHTML={{ __html: item.description }} />
             </div>
             <ServiceCarousel images={item.images} title={item.title} />
