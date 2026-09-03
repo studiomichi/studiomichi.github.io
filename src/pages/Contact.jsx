@@ -10,7 +10,7 @@ export default function Contact() {
       </div>
 
       <div>
-        <h2>For flower orders</h2>
+        <h3>For flower orders</h3>
         <p>Fill out our flower order form with your contact information, desired bouquet or arrangement style (classic or signature), any specific color/flower preferences, and your preferred pick-up or delivery date.</p>
         <a className="button contact-button" href={flowerOrderHref} target="_blank" rel="noopener noreferrer" aria-label="Open the flower order form in a new tab">
           {flowerOrderInquiry.label}
@@ -18,7 +18,7 @@ export default function Contact() {
       </div>
 
       <div>
-        <h2>For events or collaborations</h2>
+        <h3>For events or collaborations</h3>
         <p>Reach out with your contact information and details about pop-ups, your event or collaboration idea.</p>
         <a className="button contact-button" href={flowerCollabHref} aria-label="Email Studio Michi for event or collaboration inquiries">
           {flowerCollabInquiry.label}
@@ -26,7 +26,7 @@ export default function Contact() {
       </div>
 
       <div>
-        <h2>For general inquiries</h2>
+        <h3>For general inquiries</h3>
         <p>Reach out with any questions you may have.</p>
         <a className="button contact-button" href={generalInquiryHref} aria-label="Email Studio Michi with a general question">
           {generalInquiry.label}

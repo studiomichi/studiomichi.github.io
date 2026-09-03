@@ -7,6 +7,7 @@ import Services from './pages/Services';
 import Ceramics from './pages/Ceramics';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
+import FlowerCare from './pages/FlowerCare';
 import PageNotFound from './pages/PageNotFound';
 import { trackPageView, trackEvent } from './utils/gtag';
 
@@ -16,6 +17,7 @@ const pageTitles = {
   '/ceramics': 'Studio Michi - Ceramics',
   '/contact': 'Studio Michi - Contact',
   '/faq': 'Studio Michi - FAQ',
+  '/flowercare': 'Studio Michi - Flower Care',
 };
 
 function App() {
@@ -80,6 +82,7 @@ function App() {
           <Route path="/ceramics" element={<Ceramics />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path="/flowercare" element={<FlowerCare />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>

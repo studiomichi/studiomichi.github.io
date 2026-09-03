@@ -12,7 +12,7 @@ export const flowerOrderInquiry = {
   body: formatMailtoBody([
     'Please respond with the following to start your flower order:\nFull name:\nPreferred email:\nPhone:\nHow\'d you hear about me?:',
     'Bouquet or arrangement?:\nClassic or signature?:\nColor preferences (if any):\nFlower preferences (dependent on market availability):\nPick-up or delivery (if delivery, please provide delivery address and any special notes on access):\nPick-up or delivery date/time:\nAdditional notes or requests:',
-    'All orders are available for scheduled complimentary pick-up in Seattle/Central District (Wednesday - Saturday between 10am - 7pm) or delivery within 10 miles of the studio (Friday - Saturday between 10am - 1pm). Delivery outside of this location and time range is available for a fee (starting from $10 based on zip code). We recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.',
+    'All orders are available for scheduled complimentary pick-up in Seattle/Central District (Thursday - Saturday between 10am - 7pm) or delivery within 10 miles of the studio (Friday - Saturday between 10am - 1pm). Delivery outside of this location and time range is available for a fee (starting from $10 based on zip code). We recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.',
     'Note that due to the perishable nature of our work, all sales are final.',
   ]),
 };

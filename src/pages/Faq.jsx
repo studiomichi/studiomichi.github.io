@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 export default function Faq() {
   const faqs = [
     {
       question: 'How far in advance should I place an order?',
-      answer: 'We recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance. We\'ll do our best to accommodate flower preferences, but may be restricted to market availability.',
+      answer: 'Each arrangement is made to order with fresh blooms, so we recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance. We\'ll do our best to accommodate flower preferences, but may be restricted to market availability.',
     },
     {
       question: 'What\'s the ordering process?',
@@ -10,7 +12,7 @@ export default function Faq() {
     },
     {
       question: 'Where do you deliver?',
-      answer: 'We offer complimentary delivery within 10 miles of our studio near Central District (Friday - Saturday between 10am - 1pm). For delivery outside of this location and time range, a fee may apply (starting from $10 based on zip code). All orders are available for scheduled complimentary pick-up from our studio (Wednesday - Saturday between 10am - 7pm).',
+      answer: 'We offer complimentary delivery within 10 miles of our studio near Central District (Friday - Saturday between 10am - 1pm). For delivery outside of this location and time range, a fee may apply (starting from $10 based on zip code). All orders are available for scheduled complimentary pick-up from our studio (Thursday - Saturday between 10am - 7pm).',
     },
     // {
     //   question: 'How does the subscription work?',
@@ -22,11 +24,15 @@ export default function Faq() {
     // },
     {
       question: 'What flowers will I receive?',
-      answer: 'While we\'ll try to accommodate any flower preferences, the overall selection of flowers is designer\'s choice based on your color palette preferences, and seasonal (e.g., peonies in late spring, dahlias in late summer/fall, etc) and market availability. We offer a variety of natural, thoughtfully curated color palettes, from soft pastels, neutrals, and monochromatic tones to harmonious analogous color combinations. If you have specific color preferences, please include that in your inquiry and we\'ll do our best to accommodate.',
+      answer: 'Each arrangement is unique and while we\'ll try to accommodate any flower preferences, the overall selection of flowers is designer\'s choice based on your color palette preferences, and seasonal (e.g., peonies in late spring, dahlias in late summer/fall, etc) and market availability. We offer a variety of natural, thoughtfully curated color palettes, from soft pastels, neutrals, and monochromatic tones to harmonious analogous color combinations. If you have specific color preferences, please include that in your inquiry and we\'ll do our best to accommodate.',
     },
     {
       question: 'How long do the flowers last?',
-      answer: 'With proper care, our arrangements typically last 5-7 days. We recommend changing the water every 1-2 days or when it starts getting cloudy. You can also trim the stems with clean scissors and remove wilted flowers and leaves as they age. Keep them away from direct sunlight, hot rooms and ripening fruit to help them last longer.',
+      answer: (
+        <>
+          With proper care, our arrangements typically last 5-7 days depending on the type of flowers. Care instructions are included in each order and you can also visit our <Link to="/flowercare">Flower Care</Link> page for more tips.
+        </>
+      ),
     },
     {
       question: 'Are the flowers pet-friendly?',
@@ -52,7 +58,7 @@ export default function Faq() {
       <div className="faq-list">
         {faqs.map((item, index) => (
             <div key={index}>
-                <h2>{item.question}</h2>
+                <h3>{item.question}</h3>
                 <p>{item.answer}</p>
             </div>
         ))}

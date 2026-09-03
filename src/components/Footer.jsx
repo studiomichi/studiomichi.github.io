@@ -9,6 +9,7 @@ const footerLinks = [
   { to: '/services', label: 'Shop Flowers' },
   { to: '/ceramics', label: 'Ceramics' },
   { to: '/faq', label: 'FAQ' },
+  { to: '/flowercare', label: 'Flower Care' },
   { to: '/contact', label: 'Contact' },
 ];
 
