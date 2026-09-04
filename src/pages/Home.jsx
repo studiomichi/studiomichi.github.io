@@ -44,7 +44,7 @@ export default function Home() {
           <p className="eyebrow">Where your path blooms</p>
           <h2>Our story</h2>
           <p>
-            Studio Michi is a floral design studio based in Seattle, Washington creating thoughtful arrangements for any moment. Our designs are inspired and guided by the natural movement, texture, and whimsy of flowers. We aim to make sustainable choices at each step of our process, from sourcing seasonal and local blooms when possible to designing without floral foam.
+            Studio Michi is a floral design studio based in Seattle, Washington creating thoughtful arrangements for any moment. Our designs are inspired and guided by the natural movement, texture, and whimsy of flowers. We aim to make sustainable choices at each step of our process, from sourcing seasonal and local blooms when possible, designing without floral foam, to gifting leftover blooms to the community.
           </p>
           <p>
             Jenn is the floral designer and owner behind Studio Michi. What began as a love for creating with her hands has grown into a studio rooted in artistry, nature and the joy of making something beautiful.
@@ -55,7 +55,7 @@ export default function Home() {
 
         <div className="story-visual">
           <img
-            src="/images/profile-image.jpg"
+            src="/images/profile-image2.jpg"
             alt="Jenn, the owner of Studio Michi, with a peony bouquet."
             className="story-image"
             loading="eager"
