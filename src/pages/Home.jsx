@@ -7,7 +7,7 @@ export default function Home() {
       alt: 'Wild organic arrangement of smokebush, sunflowers and coreopsis.',
     },
     {
-      src: '/images/orange-summer-bouquet1.png',
+      src: '/images/orange-summer-bouquet1.jpg',
       alt: 'A bouquet with warm-toned summer blooms.',
     },
     {
@@ -47,7 +47,7 @@ export default function Home() {
             Studio Michi is a floral design studio based in Seattle, Washington creating thoughtful arrangements for any moment. Our designs are inspired and guided by the natural movement, texture, and whimsy of flowers. We aim to make sustainable choices at each step of our process, from sourcing seasonal and local blooms when possible, designing without floral foam, to gifting leftover blooms to the community.
           </p>
           <p>
-            Jenn is the floral designer and owner behind Studio Michi. What began as a love for creating with her hands has grown into a studio rooted in artistry, nature and the joy of making something beautiful.
+            Jenn is the floral designer and owner behind Studio Michi. What began as a love for creating with her hands has grown into a studio rooted in artistry, nature and the joy of making something beautiful. She's a milk tea enthusiast, cat mom, and enjoys a good hike with mountain views. Jenn loves traveling and visiting new places just as much as she loves being a homebody and tending to her garden.
           </p>
           <p>The name, Studio Michi, came from a desire to honor both her creative path and her love for cats (specifically her first cat, a foster-fail and one-eyed Siamese kitten, Mia). After considering multiple options, Jenn stumbled upon the word, <i>michi</i>. In Japanese, <i>michi</i>, (and the Chinese character for it, 道) means "path", a fitting name for her studio path. Coincidentally, <i>michi</i> is also an informal Spanish word used to refer to a "cat", making the name a serendipitous choice.</p><br/>
           <Link className="button" to="/services" aria-label="View flower offerings from story section">view flower offerings &rarr;</Link>

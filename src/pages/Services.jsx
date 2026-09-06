@@ -15,12 +15,12 @@ const serviceItems = [
       `<p>Our hand-tied bouquets feature a mix of fresh seasonal and premium blooms intentionally designed for you. Each bouquet is wrapped in water-resistant paper with a ribbon and comes in our flower bag with a water box. ${preferenceNote}</p><br/><ul><li><b>Classic (starting from $130)</b>: Our just-because bouquet full of seasonal blooms to bring a little joy and beauty into everyday moments.</li><li><b>Signature (starting from $180)</b>: Our signature bouquet featuring a beautiful mix of seasonal and premium blooms, thoughtfully designed to make someone feel truly special.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Open the bouquet order form in a new tab">${flowerOrderInquiry.buttonLabel}</a>`,
     images: [
       {
-        src: '/images/orange-summer-bouquet1.png',
+        src: '/images/orange-summer-bouquet1.jpg',
         alt: 'A classic bouquet with warm-toned summer blooms.',
         caption: 'Classic bouquet',
       },
       {
-        src: '/images/orange-summer-bouquet3.png',
+        src: '/images/orange-summer-bouquet3.jpg',
         alt: 'A classic bouquet with yellow and orange summer blooms.',
         caption: 'Classic bouquet',
       },
