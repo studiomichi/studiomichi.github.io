@@ -11,6 +11,7 @@ const footerLinks = [
   { to: '/faq', label: 'FAQ' },
   { to: '/flowercare', label: 'Flower Care' },
   { to: '/contact', label: 'Contact' },
+  { to: '/privacy-policy', label: 'Privacy Policy' },
 ];
 
 export default function Footer() {

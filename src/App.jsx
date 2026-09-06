@@ -8,6 +8,7 @@ import Ceramics from './pages/Ceramics';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
 import FlowerCare from './pages/FlowerCare';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import PageNotFound from './pages/PageNotFound';
 import { trackPageView, trackEvent } from './utils/gtag';
 
@@ -18,6 +19,7 @@ const pageTitles = {
   '/contact': 'Studio Michi - Contact',
   '/faq': 'Studio Michi - FAQ',
   '/flowercare': 'Studio Michi - Flower Care',
+  '/privacy-policy': 'Studio Michi - Privacy Policy',
 };
 
 function App() {
@@ -83,6 +85,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/flowercare" element={<FlowerCare />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
