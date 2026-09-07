@@ -15,7 +15,7 @@ export default function NavBar() {
 
   return (
     <header className="nav-bar">
-      <NavLink to="/" className="brand" onClick={closeMenu}>
+      <NavLink to="/" className="brand" onClick={closeMenu} aria-label="Studio Michi home page">
         Studio Michi
       </NavLink>
 
@@ -24,6 +24,7 @@ export default function NavBar() {
         className="mobile-nav-toggle"
         aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={menuOpen}
+        aria-controls="main-navigation"
         onClick={() => setMenuOpen((prev) => !prev)}
       >
         <span />
@@ -31,7 +32,7 @@ export default function NavBar() {
         <span />
       </button>
 
-      <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+      <nav id="main-navigation" className={`nav-links ${menuOpen ? 'open' : ''}`} aria-label="Main navigation">
         {links.map((link) => (
           <NavLink
             key={link.to}

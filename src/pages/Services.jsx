@@ -12,7 +12,7 @@ const serviceItems = [
     id: 'bouquets',
     title: 'Bouquets',
     description:
-      `<p>Our hand-tied bouquets feature a mix of fresh seasonal and premium blooms intentionally designed for you. Each bouquet is wrapped in water-resistant paper with a ribbon and comes in our flower bag with a water box. ${preferenceNote}</p><br/><ul><li><b>Classic (starting from $130)</b>: Our just-because bouquet full of seasonal blooms to bring a little joy and beauty into everyday moments.</li><li><b>Signature (starting from $180)</b>: Our signature bouquet featuring a beautiful mix of seasonal and premium blooms, thoughtfully designed to make someone feel truly special.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Open the bouquet order form in a new tab">${flowerOrderInquiry.buttonLabel}</a>`,
+      `<p>Our hand-tied bouquets feature a mix of fresh seasonal and premium blooms intentionally designed for you. Each bouquet is wrapped in water-resistant paper with a ribbon and comes in our flower bag with a water box. ${preferenceNote}</p><br/><ul><li><b>Classic (starting from $130)</b>: Our just-because bouquet full of seasonal blooms to bring a little joy and beauty into everyday moments.</li><li><b>Signature (starting from $180)</b>: Our signature bouquet featuring a beautiful mix of seasonal and premium blooms, thoughtfully designed to make someone feel truly special.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Inquire about bouquets">${flowerOrderInquiry.buttonLabel}</a>`,
     images: [
       {
         src: '/images/orange-summer-bouquet1.jpg',
@@ -35,7 +35,7 @@ const serviceItems = [
     id: 'arrangements',
     title: 'Arrangements',
     description:
-      `<p>Our floral arrangements are curated for your space and moment. Each arrangement features a mix of fresh seasonal and premium blooms designed in a ceramic or glass vase. ${preferenceNote}</p><br/><ul><li><b>Classic (starting from $150)</b>: Our classic arrangement of fresh blooms designed to brighten your space.</li><li><b>Signature (starting from $200)</b>: Our signature arrangement curated to elevate your space.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Open the arrangement order form in a new tab">${flowerOrderInquiry.buttonLabel}</a>`,
+      `<p>Our floral arrangements are curated for your space and moment. Each arrangement features a mix of fresh seasonal and premium blooms designed in a ceramic or glass vase. ${preferenceNote}</p><br/><ul><li><b>Classic (starting from $150)</b>: Our classic arrangement of fresh blooms designed to brighten your space.</li><li><b>Signature (starting from $200)</b>: Our signature arrangement curated to elevate your space.</li></ul><br/>${orderDeliveryNote}<br/><a href="${flowerOrderHref}" class="button" target="_blank" rel="noopener noreferrer" aria-label="Inquire about arrangements">${flowerOrderInquiry.buttonLabel}</a>`,
     images: [
       {
         src: '/images/pink-peony-arrangement.jpg',
@@ -93,9 +93,20 @@ function ServiceCarousel({ images, title }) {
 
   return (
     <div className="service-carousel">
-      <div className="carousel-image-frame">
-        <img src={currentImage.src} alt={currentImage.alt} loading="lazy" />
-        <div className="carousel-caption">{currentImage.caption}</div>
+      <div className="carousel-slides" aria-live="polite">
+        {images.map((image, index) => (
+          <div
+            key={`${title}-${image.alt}`}
+            id={`carousel-panel-${title}-${index}`}
+            className="carousel-image-frame"
+            role="tabpanel"
+            aria-labelledby={`carousel-tab-${title}-${index}`}
+            hidden={index !== activeIndex}
+          >
+            <img src={image.src} alt={image.alt} loading="lazy" />
+            <div className="carousel-caption">{image.caption}</div>
+          </div>
+        ))}
       </div>
 
       <div className="carousel-controls">
@@ -107,11 +118,15 @@ function ServiceCarousel({ images, title }) {
           {images.map((image, index) => (
             <button
               key={image.alt}
+              id={`carousel-tab-${title}-${index}`}
               type="button"
+              role="tab"
               className={`carousel-dot ${index === activeIndex ? 'active' : ''}`}
               onClick={() => setActiveIndex(index)}
               aria-label={`Show ${title} image ${index + 1}`}
-              aria-pressed={index === activeIndex}
+              aria-selected={index === activeIndex}
+              aria-controls={`carousel-panel-${title}-${index}`}
+              tabIndex={index === activeIndex ? 0 : -1}
             />
           ))}
         </div>
