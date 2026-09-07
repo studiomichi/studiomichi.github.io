@@ -1,23 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://studiomichi.co/</loc>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/wild-sunflower-arrangement1.jpg</image:loc>
+      <image:title>Wild organic arrangement</image:title>
+      <image:caption>Wild organic arrangement of smokebush, sunflowers and coreopsis.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/orange-summer-bouquet1.jpg</image:loc>
+      <image:title>Classic bouquet</image:title>
+      <image:caption>Classic flower bouquet of moody summer marigolds, dahlias and rudbeckia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/pink-peony-arrangement.jpg</image:loc>
+      <image:title>Signature arrangement</image:title>
+      <image:caption>A soft romantic arrangement of pink peonies and ranunculus.</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://www.studiomichi.co/</loc>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/wild-sunflower-arrangement1.jpg</image:loc>
+      <image:title>Wild organic arrangement</image:title>
+      <image:caption>Wild organic arrangement of smokebush, sunflowers and coreopsis.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/orange-summer-bouquet1.jpg</image:loc>
+      <image:title>Classic bouquet</image:title>
+      <image:caption>Classic flower bouquet of moody summer marigolds, dahlias and rudbeckia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/pink-peony-arrangement.jpg</image:loc>
+      <image:title>Signature arrangement</image:title>
+      <image:caption>A soft romantic arrangement of pink peonies and ranunculus.</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://studiomichi.co/services</loc>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/orange-summer-bouquet1.jpg</image:loc>
+      <image:title>Classic bouquet</image:title>
+      <image:caption>Classic flower bouquet of moody summer marigolds, dahlias and rudbeckia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/orange-summer-bouquet3.jpg</image:loc>
+      <image:title>Classic bouquet</image:title>
+      <image:caption>Classic flower bouquet of summer dahlias, marigolds and solidago</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/pastel-signature-bouquet.jpg</image:loc>
+      <image:title>Signature bouquet</image:title>
+      <image:caption>Signature flower bouquet of colorful pastel roses, carnations, delphiniums, scabiosa, snapdragons, lisianthus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/pink-peony-arrangement.jpg</image:loc>
+      <image:title>Signature arrangement</image:title>
+      <image:caption>Signature flower arrangement of pink peonies and ranunculus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/dahlia-meadow-arrangement.jpg</image:loc>
+      <image:title>Classic arrangement</image:title>
+      <image:caption>Classic flower arrangement of a meadow of dahlias</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/rose-dahlia-classic-arrangement.jpg</image:loc>
+      <image:title>Classic arrangement</image:title>
+      <image:caption>Classic flower arrangement of roses and dahlias</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://www.studiomichi.co/services</loc>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/orange-summer-bouquet1.jpg</image:loc>
+      <image:title>Classic bouquet</image:title>
+      <image:caption>Classic flower bouquet of moody summer marigolds, dahlias and rudbeckia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/orange-summer-bouquet3.jpg</image:loc>
+      <image:title>Classic bouquet</image:title>
+      <image:caption>Classic flower bouquet of summer dahlias, marigolds and solidago</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/pastel-signature-bouquet.jpg</image:loc>
+      <image:title>Signature bouquet</image:title>
+      <image:caption>Signature flower bouquet of colorful pastel roses, carnations, delphiniums, scabiosa, snapdragons, lisianthus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/pink-peony-arrangement.jpg</image:loc>
+      <image:title>Signature arrangement</image:title>
+      <image:caption>Signature flower arrangement of pink peonies and ranunculus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/dahlia-meadow-arrangement.jpg</image:loc>
+      <image:title>Classic arrangement</image:title>
+      <image:caption>Classic flower arrangement of a meadow of dahlias</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/rose-dahlia-classic-arrangement.jpg</image:loc>
+      <image:title>Classic arrangement</image:title>
+      <image:caption>Classic flower arrangement of roses and dahlias</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://studiomichi.co/ceramics</loc>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/ceramic-dessert-plates1.jpg</image:loc>
+      <image:title>Mini dessert plates</image:title>
+      <image:caption>Mini handmade ceramic dessert plates</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/ceramic-dessert-plates2.jpg</image:loc>
+      <image:title>Mini dessert plates</image:title>
+      <image:caption>Mini handmade ceramic dessert plates</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://studiomichi.co/images/ceramic-bowls2.jpg</image:loc>
+      <image:title>Rice/dessert bowls</image:title>
+      <image:caption>Rice/dessert handmade ceramic bowls</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://www.studiomichi.co/ceramics</loc>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/ceramic-dessert-plates1.jpg</image:loc>
+      <image:title>Mini dessert plates</image:title>
+      <image:caption>Mini handmade ceramic dessert plates</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/ceramic-dessert-plates2.jpg</image:loc>
+      <image:title>Mini dessert plates</image:title>
+      <image:caption>Mini handmade ceramic dessert plates</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.studiomichi.co/images/ceramic-bowls2.jpg</image:loc>
+      <image:title>Rice/dessert bowls</image:title>
+      <image:caption>Rice/dessert handmade ceramic bowls</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://studiomichi.co/contact</loc>
   </url>
