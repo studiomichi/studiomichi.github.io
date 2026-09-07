@@ -26,7 +26,8 @@
         delete sessionStorage.redirect;
 
         if (redirect && redirect !== window.location.href) {
-          window.history.replaceState(null, null, redirect);
+          const target = redirect.startsWith('http') ? redirect.replace(window.location.origin, '') : redirect;
+          window.history.replaceState(null, null, target || '/');
         }
       })();
     </script>
