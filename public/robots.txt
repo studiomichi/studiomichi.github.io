@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://studiomichi.co/sitemap.xml
+Sitemap: https://www.studiomichi.co/sitemap.xml
