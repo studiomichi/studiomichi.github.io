@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      sessionStorage.redirect = location.href;
-      location.replace('/');
+      (function () {
+        const path = window.location.pathname + window.location.search + window.location.hash;
+        sessionStorage.redirect = path;
+        window.location.replace('/');
+      })();
     </script>
   </head>
   <body></body>
