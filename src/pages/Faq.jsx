@@ -48,21 +48,41 @@ export default function Faq() {
     }
   ];
 
-  return (
-    <section className="page page-faq">
-      <div className="section-header">
-        <p className="eyebrow">Frequently asked questions</p>
-        <h1>FAQ</h1>
-      </div>
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: typeof item.answer === 'string' ? item.answer : 'Visit the related page for more details.',
+      },
+    })),
+  };
 
-      <div className="faq-list">
-        {faqs.map((item, index) => (
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <section className="page page-faq">
+        <div className="section-header">
+          <p className="eyebrow">Frequently asked questions</p>
+          <h1>FAQ</h1>
+        </div>
+
+        <div className="faq-list">
+          {faqs.map((item, index) => (
             <div key={index}>
-                <h3>{item.question}</h3>
-                <p>{item.answer}</p>
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
             </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

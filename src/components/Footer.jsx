@@ -22,7 +22,7 @@ export default function Footer() {
         <a
           className="footer-email"
           href={flowerOrderHref}
-          aria-label="Email Studio Michi about flower orders"
+          aria-label="studiomichico@gmail.com"
           onClick={() => trackEvent('email_click', 'footer', 'Flower order email', { destination: flowerOrderHref })}
         >
           {studioEmailAddress}
