@@ -157,7 +157,7 @@ function App() {
       if (!target) return;
 
       const href = target.getAttribute('href');
-      const label = target.textContent?.trim() || target.getAttribute('aria-label') || target.name || 'unnamed';
+      const label = (target.textContent ? target.textContent.trim() : '') || target.getAttribute('aria-label') || target.name || 'unnamed';
       const isExternal = !!href && /^(https?:)?\/\//i.test(href);
 
       const normalizedLabel = label.replace(/\s+/g, '');
