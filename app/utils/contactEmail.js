@@ -4,42 +4,34 @@ function formatMailtoBody(lines) {
   return lines.join('\n\n');
 }
 
-// Flower order email content
 export const flowerOrderInquiry = {
   subject: 'Flower Order Inquiry',
   label: 'Flower order form',
   buttonLabel: 'Inquire',
   body: formatMailtoBody([
-    'Please respond with the following to start your flower order:\nFull name:\nPreferred email:\nPhone:\nHow\'d you hear about me?:',
-    'Bouquet or arrangement?:\nClassic or signature?:\nColor preferences (if any):\nFlower preferences (dependent on market availability):\nPick-up or delivery (if delivery, please provide delivery address and any special notes on access):\nPick-up or delivery date/time:\nAdditional notes or requests:',
+    "Please respond with the following to start your flower order:\nFull name:\nPreferred email:\nPhone:\nHow'd you hear about me?:",
+    "Bouquet or arrangement?:\nClassic or signature?:\nColor preferences (if any):\nFlower preferences (dependent on market availability):\nPick-up or delivery (if delivery, please provide delivery address and any special notes on access):\nPick-up or delivery date/time:\nAdditional notes or requests:",
     'All orders are available for scheduled complimentary pick-up in Seattle/Central District (Thursday - Saturday between 10am - 7pm) or delivery within 10 miles of the studio (Friday - Saturday between 10am - 1pm). Delivery outside of this location and time range is available for a fee (starting from $10 based on zip code). We recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.',
     'Note that due to the perishable nature of our work, all sales are final.',
   ]),
 };
 
-// Flower collab email content
 export const flowerCollabInquiry = {
   subject: 'Event/Collab Inquiry',
   label: 'Email for event or collaboration inquiries',
   buttonLabel: 'Inquire',
   body: formatMailtoBody([
-    'Full name:\nPreferred email:\nPhone:\nHow\'d you hear about me?:',
-    'Please share details about your event or collaboration:\nWhen will you need the flowers?:'
+    "Full name:\nPreferred email:\nPhone:\nHow'd you hear about me?:",
+    'Please share details about your event or collaboration:\nWhen will you need the flowers?',
   ]),
 };
 
-// General email content
 export const generalInquiry = {
   subject: 'General Inquiry',
   label: 'Email for general inquiries',
   buttonLabel: 'Inquire',
-  body: ``,
+  body: '',
 };
-
-// export const flowerOrderHref = buildMailtoLink({
-//   subject: flowerOrderInquiry.subject,
-//   body: flowerOrderInquiry.body,
-// });
 
 export const flowerOrderHref = 'https://forms.gle/h1W7MgCtVth4PZSr9';
 
@@ -52,7 +44,6 @@ export const generalInquiryHref = buildMailtoLink({
   subject: generalInquiry.subject,
   body: generalInquiry.body,
 });
-
 
 export function buildMailtoLink({ to = studioEmailAddress, subject, body }) {
   return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

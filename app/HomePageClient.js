@@ -1,40 +1,41 @@
-import { Link } from 'react-router-dom';
+'use client';
 
-export default function Home() {
-  const galleryImages = [
-    {
-      src: '/images/wild-sunflower-arrangement1.jpg',
-      alt: 'Wild organic arrangement of smokebush, sunflowers and coreopsis.',
-    },
-    {
-      src: '/images/orange-summer-bouquet1.jpg',
-      alt: 'A bouquet with warm-toned summer blooms.',
-    },
-    {
-      src: '/images/dahlia-meadow-arrangement.jpg',
-      alt: 'A compote arrangement of greenery and peachy dahlias.',
-    },
-    {
-      src: '/images/green-sunflower-bouquet.jpg',
-      alt: 'A modern bouquet with greenery and sunflowers.',
-    },
-    {
-      src: '/images/red-smokebush-arrangement.jpg',
-      alt: 'A sculptural arrangement of smokebush and red carnations.',
-    },
-    {
-      src: '/images/pink-peony-arrangement.jpg',
-      alt: 'A soft romantic arrangement of pink peonies and ranunculus.',
-    },
-  ];
+import Link from 'next/link';
 
+const trackEvent = (action, category, extraData = {}) => {
+  if (typeof window === 'undefined' || !window.gtag) return;
+
+  window.gtag('event', action, {
+    event_category: category,
+    page_path: window.location.pathname,
+    ...extraData,
+  });
+};
+
+const galleryImages = [
+  { src: '/images/wild-sunflower-arrangement1.jpg', alt: 'Wild organic arrangement of smokebush, sunflowers and coreopsis.' },
+  { src: '/images/orange-summer-bouquet1.jpg', alt: 'A bouquet with warm-toned summer blooms.' },
+  { src: '/images/dahlia-meadow-arrangement.jpg', alt: 'A compote arrangement of greenery and peachy dahlias.' },
+  { src: '/images/green-sunflower-bouquet.jpg', alt: 'A modern bouquet with greenery and sunflowers.' },
+  { src: '/images/red-smokebush-arrangement.jpg', alt: 'A sculptural arrangement of smokebush and red carnations.' },
+  { src: '/images/pink-peony-arrangement.jpg', alt: 'A soft romantic arrangement of pink peonies and ranunculus.' },
+];
+
+export default function HomePageClient() {
   return (
     <section className="page-home">
       <div className="hero hero-full-width">
         <div className="hero-overlay">
           <p className="brand-slogan">whimsical blooms for everyday moments</p>
           <div className="hero-actions">
-            <Link className="button" to="/services" aria-label="View flower offerings from hero">view flower offerings &rarr;</Link>
+            <Link
+              className="button"
+              href="/services"
+              aria-label="View flower offerings from hero"
+              onClick={() => trackEvent('navigation_click_viewflowerofferings', 'internal_link', { destination: '/services' })}
+            >
+              view flower offerings &rarr;
+            </Link>
           </div>
         </div>
       </div>
@@ -49,8 +50,18 @@ export default function Home() {
           <p>
             Jenn is the floral designer and owner behind Studio Michi. What began as a love for creating with her hands has grown into a studio rooted in artistry, nature and the joy of making something beautiful. She's a milk tea enthusiast, cat mom, and enjoys a good hike with mountain views. Jenn loves traveling and visiting new places just as much as she loves being a homebody and tending to her garden.
           </p>
-          <p>The name, Studio Michi, came from a desire to honor both her creative path and her love for cats (specifically her first cat, a foster-fail and one-eyed Siamese kitten, Mia). After considering multiple options, Jenn stumbled upon the word, <i>michi</i>. In Japanese, <i>michi</i>, (and the Chinese character for it, 道) means "path", a fitting name for her studio path. Coincidentally, <i>michi</i> is also an informal Spanish word used to refer to a "cat", making the name a serendipitous choice.</p><br/>
-          <Link className="button" to="/services" aria-label="View flower offerings from story section">view flower offerings &rarr;</Link>
+          <p>
+            The name, Studio Michi, came from a desire to honor both her creative path and her love for cats (specifically her first cat, a foster-fail and one-eyed Siamese kitten, Mia). After considering multiple options, Jenn stumbled upon the word, <i>michi</i>. In Japanese, <i>michi</i>, (and the Chinese character for it, 道) means "path", a fitting name for her studio path. Coincidentally, <i>michi</i> is also an informal Spanish word used to refer to a "cat", making the name a serendipitous choice.
+          </p>
+          <br />
+          <Link
+            className="button"
+            href="/services"
+            aria-label="View flower offerings from story section"
+            onClick={() => trackEvent('navigation_click_viewflowerofferings', 'internal_link', { destination: '/services' })}
+          >
+            view flower offerings &rarr;
+          </Link>
         </div>
 
         <div className="story-visual">
