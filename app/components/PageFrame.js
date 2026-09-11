@@ -45,6 +45,7 @@ const handleLinkClick = (label, destination) => {
 export default function PageFrame({ children }) {
   const pathname = usePathname();
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +58,10 @@ export default function PageFrame({ children }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <div className="app-shell">
       <a className="skip-link" href="#main-content">Skip to content</a>
@@ -66,7 +71,20 @@ export default function PageFrame({ children }) {
           Studio Michi
         </Link>
 
-        <nav id="main-navigation" className="nav-links" aria-label="Main navigation">
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="main-navigation"
+          onClick={() => setMobileMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav id="main-navigation" className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} aria-label="Main navigation">
           {headerLinks.map((link) => {
             const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
 
@@ -75,7 +93,10 @@ export default function PageFrame({ children }) {
                 key={link.href}
                 href={link.href}
                 className={isActive ? 'nav-link active' : 'nav-link'}
-                onClick={() => handleLinkClick(link.label, link.href)}
+                onClick={() => {
+                  handleLinkClick(link.label, link.href);
+                  setMobileMenuOpen(false);
+                }}
               >
                 {link.label}
               </Link>
