@@ -14,7 +14,7 @@ const trackEvent = (action, category, extraData = {}) => {
 
 const orderDeliveryNote = 'All orders are available for scheduled complimentary pick-up in Seattle/Central District (Thursday - Saturday between 10am - 7pm) or delivery within 10 miles of the studio (Friday - Saturday between 10am - 1pm). Delivery outside of this location and time range is available for a fee (starting from $10 based on zip code). Each arrangement is made to order with fresh blooms, so we recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.';
 
-const preferenceNote = 'While we\'ll try to accomodate any flower preferences, the overall selection of flowers is designer\'s choice based on your color palette preferences, and seasonal and market availability. The example photos shown are for reference only on style and size. The final arrangement will be unique to your order.';
+const preferenceNote = 'While we\'ll try to accommodate any flower preferences, the overall selection of flowers is designer\'s choice based on your color palette preferences, and seasonal and market availability. The example photos shown are for reference only on style and size. The final arrangement will be unique to your order.';
 
 const serviceItems = [
   {
