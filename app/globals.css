@@ -75,8 +75,10 @@ main { flex: 1; padding: 0; }
 .story-copy p:last-child { margin-bottom: 0; }
 .story-visual { display: flex; justify-content: center; overflow: hidden; border-radius: 0; }
 .story-image { display: block; width: min(100%, 430px); aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; transform: scale(1.2); transform-origin: center center; }
-.hero-full-width { width: 100%; min-height: 60vh; padding: 3rem 2rem; border-radius: 0; background: linear-gradient(90deg, var(--color-hero-overlay) 0%, var(--color-hero-overlay-mid) 50%, var(--color-hero-overlay-light) 100%), url('/images/dahlia-meadow-arrangement.webp') center center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
-.hero-overlay { max-width: 38rem; margin: 0 auto; padding: 2.5rem 2rem; text-align: center; display: grid; gap: 1.25rem; justify-items: center; }
+.hero-full-width { position: relative; width: 100%; min-height: 60vh; padding: 3rem 2rem; border-radius: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.hero-full-width::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--color-hero-overlay) 0%, var(--color-hero-overlay-mid) 50%, var(--color-hero-overlay-light) 100%); z-index: 1; }
+.hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-overlay { position: relative; z-index: 2; max-width: 38rem; margin: 0 auto; padding: 2.5rem 2rem; text-align: center; display: grid; gap: 1.25rem; justify-items: center; }
 .brand-slogan { margin: 0; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.1; letter-spacing: 0.02em; font-family: "Judson", serif; color: var(--color-brand); text-shadow: 0 2px 8px rgba(255, 255, 255, 0.18); }
 .hero-actions { display: flex; justify-content: center; }
 .eyebrow { margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--color-text-quiet); font-size: 0.9rem; }
