@@ -25,6 +25,16 @@ export default function HomePageClient() {
   return (
     <section className="page-home">
       <div className="hero hero-full-width">
+        <img
+          className="hero-image"
+          src="/images/dahlia-meadow-arrangement.webp"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          width="1600"
+          height="900"
+        />
         <div className="hero-overlay">
           <p className="brand-slogan">whimsical blooms for everyday moments</p>
           <div className="hero-actions">
