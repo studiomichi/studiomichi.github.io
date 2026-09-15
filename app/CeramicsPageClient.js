@@ -13,17 +13,17 @@ const trackEvent = (action, category, extraData = {}) => {
 const galleryImages = [
   {
     src: '/images/ceramic-dessert-plates1.jpg',
-    alt: 'Mini ceramic plates partially in the sunlight.',
+    alt: 'Mini speckled matte white handmade ceramic plates partially in the sunlight with pink sweetpea flowers in the corner.',
     caption: 'Mini dessert plates',
   },
   {
     src: '/images/ceramic-dessert-plates2.jpg',
-    alt: 'Close-up of ceramic dessert plates styled together.',
+    alt: 'Close-up of two speckled matte white handmade ceramic dessert plates resting on top of each other. The top plate shows the bottom of the plate with a small signature stamp. Two silver mini forks rest on the right side of the plates.',
     caption: 'Mini dessert plates',
   },
   {
     src: '/images/ceramic-bowls2.jpg',
-    alt: 'Ceramic bowls in a warm neutral studio setting.',
+    alt: 'Speckled matte white handmade ceramic bowls on a warm wooden surface. One bowl is on its side, one is upside down to show the bottom of the bowl, and two are stacked on top of each other.',
     caption: 'Rice/dessert bowls',
   },
 ];

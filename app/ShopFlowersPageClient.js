@@ -29,9 +29,9 @@ const serviceItems = [
     ctaLabel: 'Inquire',
     ctaEventName: 'external_link_click_inquirebouquets',
     images: [
-      { src: '/images/orange-summer-bouquet1.jpg', alt: 'A classic bouquet with warm-toned summer blooms.', caption: 'Classic bouquet' },
-      { src: '/images/orange-summer-bouquet3.jpg', alt: 'A classic bouquet with yellow and orange summer blooms.', caption: 'Classic bouquet' },
-      { src: '/images/pastel-signature-bouquet.jpg', alt: 'A colorful and pastel signature bouquet with roses, lisianthus and carnations.', caption: 'Signature bouquet' },
+      { src: '/images/orange-summer-bouquet1.jpg', alt: 'A hand-tied classic bouquet with warm-toned summer blooms wrapped in orange and cream paper with an orange ribbon. Seasonal flowers featured include orange marigolds, deep red dahlias, chocolate cosmos, orange and red rudbeckia, yellow solidago, and deep red carnations.', caption: 'Classic bouquet' },
+      { src: '/images/orange-summer-bouquet3.jpg', alt: 'A hand-tied classic bouquet featuring orange marigolds, yellow and peach dahlias, yellow solidago, and peach roses wrapped in peachy and white wrapping paper and tied with a light orange ribbon.', caption: 'Classic bouquet' },
+      { src: '/images/pastel-signature-bouquet.jpg', alt: 'A colorful and pastel signature bouquet full of purple delphiniums and scabiosas, pink and peach roses, pink carnations, pink lisianthus, pink-purple snapdragons, yellow billy balls, and hints of blue tweeida. All wrapped in a pink and white wrapping with pink and purple ribbons.', caption: 'Signature bouquet' },
     ],
   },
   {
@@ -46,9 +46,9 @@ const serviceItems = [
     ctaLabel: 'Inquire',
     ctaEventName: 'external_link_click_inquirearrangements',
     images: [
-      { src: '/images/pink-peony-arrangement.jpg', alt: 'A signature arrangement of pink peonies and ranunculus.', caption: 'Signature arrangement' },
-      { src: '/images/dahlia-meadow-arrangement.jpg', alt: 'A classic arrangement of greenery and dahlias.', caption: 'Classic arrangement' },
-      { src: '/images/rose-dahlia-classic-arrangement.jpg', alt: 'A signature arrangement of wild sunflowers and greenery.', caption: 'Classic arrangement' },
+      { src: '/images/pink-peony-arrangement.jpg', alt: 'A signature flower arrangement with romantic lush garden vibes featuring pink peonies, pink and cream ranunculus, cream and yellow butterfly ranunculus, pink sweetpea vines, and white scabiosas.', caption: 'Signature arrangement' },
+      { src: '/images/dahlia-meadow-arrangement.jpg', alt: 'A classic flower arrangement giving meadowy vibes featuring flowy ferns, yellow solidago, peachy dahlias, purple campanula bellflowers, and orange-red coreopsis.', caption: 'Classic arrangement' },
+      { src: '/images/rose-dahlia-classic-arrangement.jpg', alt: 'A classic flower arrangement with a mix of peach roses, pink dahlias, pink lisianthus, purple scabiosas, peachy carnations, yellow billy balls, explosion grass and bunny tail grass.', caption: 'Classic arrangement' },
     ],
   },
 ];
@@ -113,12 +113,12 @@ function ServiceCarousel({ images, title }) {
   );
 }
 
-export default function ServicesPageClient() {
+export default function ShopFlowersPageClient() {
   return (
     <section className="page page-services">
       <div className="section-header">
         <p className="eyebrow">Flower offerings</p>
-        <h1>Services</h1>
+        <h1>Shop Flowers</h1>
         <nav className="service-nav" aria-label="Jump to service sections">
           <a href="#bouquets" className="service-pill" aria-label="Jump to bouquets section" onClick={() => trackEvent('navigation_click_bouquets', 'internal_link', { destination: '#bouquets' })}>Bouquets</a>
           <a href="#arrangements" className="service-pill" aria-label="Jump to arrangements section" onClick={() => trackEvent('navigation_click_arrangements', 'internal_link', { destination: '#arrangements' })}>Arrangements</a>
