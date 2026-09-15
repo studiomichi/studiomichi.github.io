@@ -7,17 +7,17 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 
 const headerLinks = [
-  { href: '/services', label: 'Shop Flowers' },
-  { href: '/ceramics', label: 'Ceramics' },
+  { href: '/shop-flowers', label: 'Shop Flowers' },
+  { href: '/handmade-ceramics', label: 'Ceramics' },
   { href: '/contact', label: 'Contact' },
 ];
 
 const footerLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Shop Flowers' },
-  { href: '/ceramics', label: 'Ceramics' },
+  { href: '/shop-flowers', label: 'Shop Flowers' },
+  { href: '/handmade-ceramics', label: 'Ceramics' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/flowercare', label: 'Flower Care' },
+  { href: '/flower-care', label: 'Flower Care' },
   { href: '/contact', label: 'Contact' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
 ];

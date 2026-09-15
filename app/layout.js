@@ -6,13 +6,13 @@ import GoogleAnalytics from './components/GoogleAnalytics';
 export const metadata = {
   metadataBase: new URL('https://studiomichi.co'),
   title: 'Studio Michi - Seattle Floral Studio',
-  description: 'Studio Michi is a Seattle floral studio creating custom bouquets and arrangements for everyday moments.',
+  description: 'Studio Michi is a Seattle floral studio creating custom flower bouquets and arrangements for everyday moments.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Studio Michi - Seattle Floral Studio',
-    description: 'Studio Michi is a Seattle floral studio creating custom bouquets and arrangements for everyday moments.',
+    description: 'Studio Michi is a Seattle floral studio creating custom flower bouquets and arrangements for everyday moments.',
     url: 'https://studiomichi.co',
     siteName: 'Studio Michi',
     type: 'website',
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
     '@type': 'WebSite',
     name: 'Studio Michi',
     url: 'https://studiomichi.co',
-    description: 'Studio Michi is a Seattle floral studio creating custom bouquets and arrangements for everyday moments.',
+    description: 'Studio Michi is a Seattle floral studio creating custom flower bouquets and arrangements for everyday moments.',
     potentialAction: {
       '@type': 'SearchAction',
       target: 'https://studiomichi.co/?q={search_term_string}',
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
     '@context': 'https://schema.org',
     '@type': 'Florist',
     name: 'Studio Michi',
-    description: 'Studio Michi is a Seattle floral studio creating custom bouquets and arrangements for everyday moments.',
+    description: 'Studio Michi is a Seattle floral studio creating custom flower bouquets and arrangements for everyday moments.',
     url: 'https://studiomichi.co',
     image: 'https://studiomichi.co/images/dahlia-meadow-arrangement.jpg',
     address: {

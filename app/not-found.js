@@ -11,7 +11,7 @@ export default function PageNotFound() {
         <p>
           We couldn’t find the page you were looking for.
         </p>
-        <Link href="/services" className="button">
+        <Link href="/shop-flowers" className="button">
           Back to flower offerings →
         </Link>
       </div>

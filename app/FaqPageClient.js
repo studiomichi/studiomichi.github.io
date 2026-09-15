@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: 'How long do the flowers last?',
-    answer: <>With proper care, our arrangements typically last 5-7 days depending on the type of flowers. Care instructions are included in each order and you can also visit our <Link href="/flowercare" onClick={() => trackEvent('navigation_click_FlowerCare', 'internal_link', { destination: '/flowercare' })}>Flower Care</Link> page for more tips.</>,
+    answer: <>With proper care, our arrangements typically last 5-7 days depending on the type of flowers. Care instructions are included in each order and you can also visit our <Link href="/flower-care" onClick={() => trackEvent('navigation_click_FlowerCare', 'internal_link', { destination: '/flower-care' })}>Flower Care</Link> page for more tips.</>,
   },
   {
     question: 'Are the flowers pet-friendly?',
