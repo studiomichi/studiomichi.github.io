@@ -40,6 +40,7 @@ export default function CeramicsPageClient() {
         <p>
           Our next pop-up will be on <b>October 10th, 2026 from 11am - 4pm</b> at <b><a href="https://maps.app.goo.gl/p4prUh28AcKKkWrx9" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('external_link_click_SilkenCeramics', 'external_link', { destination: 'https://maps.app.goo.gl/p4prUh28AcKKkWrx9' })}>Silken Ceramics (853 Hiawatha Pl S, Seattle, WA 98144)</a></b>!
         </p>
+        <p>My maker's mark features the outline of a cat that I hand-drew and vectorized so that I could use it on a stamp. I love that it also looks like an "M", for "Michi" and "Mia" (my first cat, a foster-fail and one-eyed Siamese kitten, that I lost to FIP). The "hook" on one side also is a subtle nod at one of the characters in my Chinese name (嫻) 😊.</p>
       </div>
 
       <div className="ceramic-gallery" aria-label="Studio Michi ceramic gallery">
