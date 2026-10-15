@@ -15,7 +15,7 @@ const trackEvent = (action, category, extraData = {}) => {
 const galleryImages = [
   { src: '/images/wild-sunflower-arrangement1.jpg', alt: 'Wild and organic arrangements of smokebush plumes, yellow sunflowers and coreopsis.' },
   { src: '/images/orange-summer-bouquet1.jpg', alt: 'A hand-tied classic bouquet with warm-toned summer blooms wrapped in orange and cream paper with an orange ribbon. Seasonal flowers featured include orange marigolds, deep red dahlias, chocolate cosmos, orange and red rudbeckia, yellow solidago, and deep red carnations.' },
-  { src: '/images/dahlia-meadow-arrangement.jpg', alt: 'A compote flower arrangement giving meadowy vibes featuring flowy ferns, yellow solidago, peachy dahlias, purple campanula bellflowers, and orange-red coreopsis.' },
+  { src: '/images/orange-fall-dahlia-arrangement2.jpg', alt: 'A bright fall arrangement featuring peachy carnations and dahlias, red rosehips and pincushions, pink and peachy anthuriums, orange-red gomphrenas, and caramel antike roses.' },
   { src: '/images/green-sunflower-bouquet.jpg', alt: 'A modern flower bouquet with grasses, dianthus, chocolate cosmos, and naked sunflowers wrapped in white wrapping and sitting in a brown flower bag.' },
   { src: '/images/red-smokebush-arrangement.jpg', alt: 'A sculptural flower arrangement of smokebush plumes and deep red carnations in a tall compote vase.' },
   { src: '/images/pink-peony-arrangement.jpg', alt: 'A soft and romantic lush garden flower arrangement featuring pink peonies, pink and cream ranunculus, cream and yellow butterfly ranunculus, pink sweetpea vines, and white scabiosas.' },

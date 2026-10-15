@@ -33,6 +33,13 @@ export const generalInquiry = {
   body: '',
 };
 
+export const ceramicsInquiry = {
+  subject: 'Ceramics Inquiry',
+  label: 'Email for ceramics inquiries',
+  buttonLabel: 'Inquire',
+  body: '',
+};
+
 export const flowerOrderHref = 'https://forms.gle/h1W7MgCtVth4PZSr9';
 
 export const flowerCollabHref = buildMailtoLink({
@@ -43,6 +50,11 @@ export const flowerCollabHref = buildMailtoLink({
 export const generalInquiryHref = buildMailtoLink({
   subject: generalInquiry.subject,
   body: generalInquiry.body,
+});
+
+export const ceramicsInquiryHref = buildMailtoLink({
+  subject: ceramicsInquiry.subject,
+  body: ceramicsInquiry.body,
 });
 
 export function buildMailtoLink({ to = studioEmailAddress, subject, body }) {
