@@ -22,8 +22,12 @@ const faqs = [
     answer: 'Our inquiry link will take you to our flower order form. Please complete and submit the form and we\'ll get back to you within 1-3 days about your order, discuss any preferences and limitations and send the payment details. Once payment is received, we\'ll confirm your order and schedule your pick-up or delivery date and time.',
   },
   {
+    question: 'How does the subscription service work?',
+    answer: 'Our monthly subscription service delivers fresh, seasonal blooms straight to your home or business. Monthly arrangements come in vase, which we\'ll swap out with a fresh arrangement and vase each month. Subscription arrangements are designer\'s choice, guided by your color palette and seasonal and market availability. We\'ll do our best to accommodate your preferences, though each delivery will feature a fresh and unique arrangement. Monthly subscriptions will be billed on the 1st of each month and can be canceled at any time. Please reach out to us if you have any questions about our subscription service.',
+  },
+  {
     question: 'Where do you deliver?',
-    answer: 'We offer complimentary delivery within 10 miles of our studio near Central District (Friday - Saturday between 10am - 1pm). For delivery outside of this location and time range, a fee may apply (starting from $10 based on zip code). All orders are available for scheduled complimentary pick-up from our studio (Thursday - Saturday between 10am - 7pm).',
+    answer: 'We offer complimentary delivery within 10 miles of our studio near Central District (Friday - Saturday between 10am - 1pm) (including Madrona, Leschi, First Hill, Queen Anne, Columbia City, Mercer Island, etc.). For delivery outside of this location and time range, a fee may apply (starting from $10 based on zip code). All orders are available for scheduled complimentary pick-up from our studio (Thursday - Saturday between 10am - 7pm).',
   },
   {
     question: 'What flowers will I receive?',
@@ -43,7 +47,7 @@ const faqs = [
   },
   {
     question: 'Do you offer refunds?',
-    answer: 'Due to the perishable nature of flowers, all sales are final. If you have any concerns about your order, please reach out to us within 2 hours of pick-up or delivery and we\'ll do our best to address them.',
+    answer: 'Due to the perishable nature of flowers, all sales are final. If you have any concerns about your order, please reach out to us within 8 hours of pick-up or delivery and we\'ll do our best to address them.',
   },
 ];
 

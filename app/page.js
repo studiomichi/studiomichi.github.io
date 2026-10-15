@@ -1,7 +1,7 @@
 import HomePageClient from './HomePageClient';
 
 export const metadata = {
-  title: 'Studio Michi - Seattle Floral Studio',
+  title: 'Seattle Florist & Floral Studio - Studio Michi',
   description: 'Studio Michi is a Seattle floral studio creating custom flower bouquets and arrangements for everyday moments.',
   alternates: { canonical: '/' },
 };

@@ -1,8 +1,8 @@
 import ShopFlowersPageClient from '../ShopFlowersPageClient';
 
 export const metadata = {
-  title: 'Flower Bouquets & Arrangements - Studio Michi',
-  description: 'Explore custom bouquets and floral arrangements from Studio Michi, designed for gifting, events, and everyday moments in Seattle.',
+  title: 'Shop Flower Bouquets & Arrangements - Seattle Flower Delivery - Studio Michi',
+  description: 'Shop local flower bouquets and floral arrangements designed for gifting, events, and everyday moments in Seattle. Flower delivery and pick-up available.',
   alternates: { canonical: '/shop-flowers/' },
 };
 
