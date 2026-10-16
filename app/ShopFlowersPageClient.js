@@ -23,7 +23,7 @@ const serviceItems = [
     intro: 'Our hand-tied bouquets feature a mix of fresh seasonal and premium blooms intentionally designed for you. Each bouquet is wrapped in water-resistant paper with a ribbon and comes in our flower bag with a water box.',
     orderNote: 'Each arrangement is made to order with fresh blooms, so we recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.',
     bulletList: [
-      { label: 'Classic (starting from $130)', text: 'Our just-because bouquet full of seasonal blooms to bring a little joy and beauty into everyday moments.' },
+      { label: 'Classic (starting from $100)', text: 'Our just-because bouquet full of seasonal blooms and greenery to bring a little joy and beauty into everyday moments.' },
       { label: 'Signature (starting from $180)', text: 'Our signature bouquet featuring a beautiful mix of seasonal and premium blooms, thoughtfully designed to make someone feel truly special.' },
     ],
     ctaHref: 'https://forms.gle/h1W7MgCtVth4PZSr9',
@@ -41,7 +41,7 @@ const serviceItems = [
     intro: 'Our floral arrangements are curated for your space and moment. Each arrangement features a mix of fresh seasonal and premium blooms designed in a ceramic or glass vase.',
     orderNote: 'Each arrangement is made to order with fresh blooms, so we recommend placing orders at least 5 days in advance. If you need specific flowers, please order at least 3 weeks in advance.',
     bulletList: [
-      { label: 'Classic (starting from $150)', text: 'Our classic arrangement of fresh blooms designed to brighten and bring an extra bit of joy to your space.' },
+      { label: 'Classic (starting from $100)', text: 'Our classic arrangement of fresh blooms and lush greenery designed to brighten and bring an extra bit of joy to your space.' },
       { label: 'Signature (starting from $200)', text: 'Our signature arrangement is perfect if you need a bit more of a statement piece for your space or if you\'re hosting.' },
     ],
     ctaHref: 'https://forms.gle/h1W7MgCtVth4PZSr9',
@@ -60,7 +60,7 @@ const serviceItems = [
   //   intro: 'Our monthly subscription service delivers fresh, seasonal blooms straight to your home or business. Monthly arrangements come in a vase, which we\'ll swap out each month.',
   //   preferenceNote: 'Subscription arrangements are designer\'s choice, guided by your color palette preferences and seasonal and market availability. The example photos shown are for reference only on style and size. The final arrangement will be unique to your order.',
   //   bulletList: [
-  //     { label: 'Classic (starting from $130)', text: 'Our classic arrangement of fresh blooms designed to brighten and bring an extra bit of joy to your space.' },
+  //     { label: 'Classic (starting from $100)', text: 'Our classic arrangement of fresh blooms and lush greenery designed to brighten and bring an extra bit of joy to your space.' },
   //     { label: 'Signature (starting from $180)', text: 'Our signature arrangement is perfect if you need a bit more of a statement piece for your space.' },
   //   ],
   //   ctaHref: 'https://forms.gle/h1W7MgCtVth4PZSr9',
