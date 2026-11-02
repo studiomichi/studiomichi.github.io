@@ -9,11 +9,11 @@ const arrangementOptions = [
   { id: 'wedding-party-bouquet', label: 'Wedding party bouquet', price: 125 },
   { id: 'aisle-piece', label: 'Aisle piece', price: 250 },
   { id: 'ground meadow', label: 'Ground meadow', price: 1500 },
-  { id: 'arch', label: 'Arch', price: 3000 },
+  { id: 'arch', label: 'Arch', price: 2000 },
   { id: 'statement-piece', label: 'Statement piece (bar, welcome)', price: 300 },
   { id: 'centerpiece', label: 'Centerpiece', price: 200 },
-  { id: 'pin-frog-arrangement', label: 'Pin frog arrangement', price: 80 },
-  { id: 'budvases', label: 'Bud vase', price: 30 },
+  { id: 'pin-frog-arrangement', label: 'Pin frog arrangement', price: 50 },
+  { id: 'budvases', label: 'Bud vase', price: 25 },
 ];
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -135,7 +135,7 @@ export default function EventsPageClient() {
           <li>
             <h3>Celebrate</h3>
             <p>
-              We'll handle the floral details and work with your vendors or coordinator, and we'll be available to answer any questions leading up to your event. On the day of the event, we'll manage set-up, installation and tear-down (as needed) so you can enjoy your day!
+              We'll handle the floral details and work with your planner or vendors, and we'll be available to answer any questions leading up to your event. On the day of the event, we'll manage set-up, installation and tear-down (as needed) so you can enjoy your day!
             </p>
           </li>
         </ol>
