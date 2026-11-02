@@ -16,6 +16,8 @@ const orderDeliveryNote = 'All orders are available for scheduled complimentary 
 
 const preferenceNote = 'While we\'ll try to accommodate any flower preferences, the overall selection of flowers is designer\'s choice based on your color palette preferences, and seasonal and market availability. The example photos shown are for reference only on style and size. The final arrangement will be unique to your order.';
 
+const disclaimerNote = 'Note that due to the perishable nature of our work, all sales are final.';
+
 const serviceItems = [
   {
     id: 'bouquets',
@@ -54,23 +56,22 @@ const serviceItems = [
       { src: '/images/rose-dahlia-classic-arrangement.jpg', alt: 'A classic flower arrangement with a mix of peach roses, pink dahlias, pink lisianthus, purple scabiosas, peachy carnations, yellow billy balls, explosion grass and bunny tail grass.', caption: 'Classic arrangement' },
     ],
   },
-  // {
-  //   id: 'subscriptions',
-  //   title: 'Subscriptions',
-  //   intro: 'Our monthly subscription service delivers fresh, seasonal blooms straight to your home or business. Monthly arrangements come in a vase, which we\'ll swap out each month.',
-  //   preferenceNote: 'Subscription arrangements are designer\'s choice, guided by your color palette preferences and seasonal and market availability. The example photos shown are for reference only on style and size. The final arrangement will be unique to your order.',
-  //   bulletList: [
-  //     { label: 'Classic (starting from $100)', text: 'Our classic arrangement of fresh blooms and lush greenery designed to brighten and bring an extra bit of joy to your space.' },
-  //     { label: 'Signature (starting from $180)', text: 'Our signature arrangement is perfect if you need a bit more of a statement piece for your space.' },
-  //   ],
-  //   ctaHref: 'https://forms.gle/h1W7MgCtVth4PZSr9',
-  //   ctaLabel: 'Inquire',
-  //   ctaEventName: 'external_link_click_inquiresubscriptions',
-  //   images: [
-  //     { src: '/images/dahlia-meadow-arrangement.jpg', alt: 'A classic flower arrangement giving meadowy vibes featuring flowy ferns, yellow solidago, peachy dahlias, purple campanula bellflowers, and orange-red coreopsis.', caption: 'Classic arrangement' },
-  //     { src: '/images/orange-fall-dahlia-arrangement1.jpg', alt: 'A bright fall arrangement featuring peachy carnations and dahlias, red rosehips and pincushions, pink and peachy anthuriums, orange-red gomphrenas, and caramel antike roses in a gold compote vase.', caption: 'Signature arrangement' },
-  //   ],
-  // }
+  {
+    id: 'subscriptions',
+    title: 'Subscriptions',
+    intro: 'Our monthly subscription service delivers fresh, seasonal blooms straight to your home or business. Monthly arrangements come in a vase, which we\'ll swap out each month.',
+    preferenceNote: 'Subscription arrangements are designer\'s choice, guided by your color palette preferences and seasonal and market availability. The example photos shown are for reference only on style and size.',
+    bulletList: [
+      { label: 'Classic (starting from $100)', text: 'Our classic arrangement of fresh blooms and lush greenery designed to brighten and bring an extra bit of joy to your space.' },
+    ],
+    ctaHref: 'https://forms.gle/h1W7MgCtVth4PZSr9',
+    ctaLabel: 'Inquire',
+    ctaEventName: 'external_link_click_inquiresubscriptions',
+    images: [
+      { src: '/images/dahlia-meadow-arrangement2.jpg', alt: 'A classic flower arrangement giving meadowy vibes featuring flowy ferns, yellow solidago, peachy dahlias and purple scabiosas.', caption: 'Classic arrangement' },
+      { src: '/images/fall-dahlia-arrangement.jpg', alt: 'A classic flower arrangement with orange and burgundy dahlias, marigolds and carnations.', caption: 'Classic arrangement' }
+    ],
+  }
 ];
 
 function ServiceCarousel({ images, title }) {
@@ -142,7 +143,7 @@ export default function ShopFlowersPageClient() {
         <nav className="service-nav" aria-label="Jump to service sections">
           <a href="#bouquets" className="service-pill" aria-label="Jump to bouquets section" onClick={() => trackEvent('navigation_click_bouquets', 'internal_link', { destination: '#bouquets' })}>Bouquets</a>
           <a href="#arrangements" className="service-pill" aria-label="Jump to arrangements section" onClick={() => trackEvent('navigation_click_arrangements', 'internal_link', { destination: '#arrangements' })}>Arrangements</a>
-          {/* <a href="#subscriptions" className="service-pill" aria-label="Jump to subscriptions section" onClick={() => trackEvent('navigation_click_subscriptions', 'internal_link', { destination: '#subscriptions' })}>Subscriptions</a> */}
+          <a href="#subscriptions" className="service-pill" aria-label="Jump to subscriptions section" onClick={() => trackEvent('navigation_click_subscriptions', 'internal_link', { destination: '#subscriptions' })}>Subscriptions</a>
         </nav>
       </div>
 
@@ -163,15 +164,19 @@ export default function ShopFlowersPageClient() {
               <br/>
               <p>{item.orderDeliveryNote || orderDeliveryNote} {item.orderNote}</p>
               <br/>
-              <p><b>Note that due to the perishable nature of our work, all sales are final.</b></p>
+              <p><b>{item.disclaimerNote || disclaimerNote}</b></p>
               <br/>
               <a
                 href={item.ctaHref}
                 className="button"
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label={`Inquire about ${item.title.toLowerCase()}`}
-                onClick={() => trackEvent(item.ctaEventName, 'external_link', { destination: item.ctaHref })}
+                target={item.ctaIsExternal === false ? undefined : '_blank'}
+                rel={item.ctaIsExternal === false ? undefined : 'noopener noreferrer'}
+                onClick={() => trackEvent(
+                  item.ctaIsExternal === false ? 'navigation_click_eventinquiry' : item.ctaEventName,
+                  item.ctaIsExternal === false ? 'internal_link' : 'external_link',
+                  { destination: item.ctaHref },
+                )}
               >
                 {item.ctaLabel}
               </a>

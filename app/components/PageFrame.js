@@ -3,13 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import LightModeIcon from '@mui/icons-material/LightMode';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 
 const headerLinks = [
   { href: '/shop-flowers', label: 'Shop Flowers' },
+  { href: '/seattle-events', label: 'Events' },
   { href: '/handmade-ceramics', label: 'Ceramics' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -17,6 +16,7 @@ const headerLinks = [
 const footerLinks = [
   { href: '/', label: 'Home' },
   { href: '/shop-flowers', label: 'Shop Flowers' },
+  { href: '/seattle-events', label: 'Events' },
   { href: '/handmade-ceramics', label: 'Ceramics' },
   { href: '/faq', label: 'FAQ' },
   { href: '/flower-care', label: 'Flower Care' },
@@ -48,26 +48,6 @@ export default function PageFrame({ children }) {
   const pathname = usePathname();
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [nightMode, setNightMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem('studio-michi-theme');
-    const isNightMode = savedTheme === 'night';
-
-    document.documentElement.dataset.theme = isNightMode ? 'night' : 'light';
-    setNightMode(isNightMode);
-  }, []);
-
-  const toggleNightMode = () => {
-    setNightMode((currentMode) => {
-      const nextMode = !currentMode;
-
-      document.documentElement.dataset.theme = nextMode ? 'night' : 'light';
-      window.localStorage.setItem('studio-michi-theme', nextMode ? 'night' : 'light');
-
-      return nextMode;
-    });
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -126,16 +106,6 @@ export default function PageFrame({ children }) {
           })}
         </nav>
 
-        <button
-          type="button"
-          className="theme-toggle"
-          onClick={toggleNightMode}
-          aria-label={nightMode ? 'Switch to light mode' : 'Switch to night mode'}
-          aria-pressed={nightMode}
-          title={nightMode ? 'Switch to light mode' : 'Switch to night mode'}
-        >
-          {nightMode ? <LightModeIcon fontSize="small" /> : <DarkModeIcon fontSize="small" />}
-        </button>
       </header>
 
       <main id="main-content" className="app-content">{children}</main>

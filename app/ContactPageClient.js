@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  flowerCollabHref,
   flowerOrderHref,
   generalInquiryHref,
   studioEmailAddress,
@@ -35,9 +34,9 @@ export default function ContactPageClient() {
       </div>
 
       <div>
-        <h3>For events or collaborations</h3>
-        <p>Reach out with your contact information and details about pop-ups, your event or collaboration idea.</p>
-        <a className="button contact-button" href={flowerCollabHref} aria-label="Email Studio Michi for event or collaboration inquiries" onClick={() => trackEvent('external_link_click_eventcollab', 'external_link', { destination: flowerCollabHref })}>Email for event or collaboration inquiries</a>
+        <h3>For events and gatherings</h3>
+        <p>For intimate celebrations and private gatherings, please tell us about your day with our event inquiry form.</p>
+        <a className="button contact-button" href="/seattle-events#event-inquiry" aria-label="Go to the event inquiry form" onClick={() => trackEvent('navigation_click_eventinquiry', 'internal_link', { destination: '/seattle-events#event-inquiry' })}>Event inquiry form</a>
       </div>
 
       <div>
