@@ -2,7 +2,7 @@ import FaqPageClient from '../FaqPageClient';
 
 export const metadata = {
   title: 'Frequently Asked Questions - Studio Michi',
-  description: 'Find answers about ordering flowers, flower delivery in Seattle, and flower care.',
+  description: 'Find answers about flower orders, event florals, and handmade ceramics from Studio Michi.',
   alternates: { canonical: '/faq/' },
 };
 
