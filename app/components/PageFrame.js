@@ -8,7 +8,7 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 
 const headerLinks = [
   { href: '/shop-flowers', label: 'Shop Flowers' },
-  { href: '/events', label: 'Events' },
+  { href: '/seattle-events', label: 'Events' },
   { href: '/handmade-ceramics', label: 'Ceramics' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -16,7 +16,7 @@ const headerLinks = [
 const footerLinks = [
   { href: '/', label: 'Home' },
   { href: '/shop-flowers', label: 'Shop Flowers' },
-  { href: '/events', label: 'Events' },
+  { href: '/seattle-events', label: 'Events' },
   { href: '/handmade-ceramics', label: 'Ceramics' },
   { href: '/faq', label: 'FAQ' },
   { href: '/flower-care', label: 'Flower Care' },

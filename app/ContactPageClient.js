@@ -36,7 +36,7 @@ export default function ContactPageClient() {
       <div>
         <h3>For events and gatherings</h3>
         <p>For intimate celebrations and private gatherings, please tell us about your day with our event inquiry form.</p>
-        <a className="button contact-button" href="/events#event-inquiry" aria-label="Go to the event inquiry form" onClick={() => trackEvent('navigation_click_eventinquiry', 'internal_link', { destination: '/events#event-inquiry' })}>Event inquiry form</a>
+        <a className="button contact-button" href="/seattle-events#event-inquiry" aria-label="Go to the event inquiry form" onClick={() => trackEvent('navigation_click_eventinquiry', 'internal_link', { destination: '/seattle-events#event-inquiry' })}>Event inquiry form</a>
       </div>
 
       <div>

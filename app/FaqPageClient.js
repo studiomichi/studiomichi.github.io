@@ -61,7 +61,7 @@ const faqSections = [
     faqs: [
       {
         question: 'How do I get started with event flowers?',
-        answer: <>Submit the <Link href="/events" onClick={() => trackEvent('navigation_click_Events', 'internal_link', { destination: '/events' })}>event inquiry form</Link> and we'll follow up with a personalized proposal. A non-refundable deposit and signed contract is required to secure your event date.</>,
+        answer: <>Submit the <Link href="/seattle-events#event-inquiry" onClick={() => trackEvent('navigation_click_Events', 'internal_link', { destination: '/seattle-events#event-inquiry' })}>event inquiry form</Link> and we'll follow up with a personalized proposal. A non-refundable deposit and signed contract is required to secure your event date.</>,
       },
       {
         question: 'How far in advance should I inquire about my event?',
