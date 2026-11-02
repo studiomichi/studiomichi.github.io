@@ -63,7 +63,6 @@ const serviceItems = [
     preferenceNote: 'Subscription arrangements are designer\'s choice, guided by your color palette preferences and seasonal and market availability. The example photos shown are for reference only on style and size.',
     bulletList: [
       { label: 'Classic (starting from $100)', text: 'Our classic arrangement of fresh blooms and lush greenery designed to brighten and bring an extra bit of joy to your space.' },
-      // { label: 'Signature (starting from $180)', text: 'Our signature arrangement is perfect if you need a bit more of a statement piece for your space.' },
     ],
     ctaHref: 'https://forms.gle/h1W7MgCtVth4PZSr9',
     ctaLabel: 'Inquire',

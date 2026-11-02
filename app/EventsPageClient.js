@@ -77,23 +77,23 @@ export default function EventsPageClient() {
     const body = [
       `Name: ${formData.get('name')}`,
       `Email: ${formData.get('email')}`,
-      `Phone: ${formData.get('phone') || 'Not provided'}`,
+      `Phone: ${formData.get('phone') || ''}`,
       `Event type: ${formData.get('eventType')}`,
       `Event date: ${formData.get('eventDate')}`,
-      `Planning stage: ${formData.get('planningStage') || 'Not provided'}`,
-      `How did you hear about us?: ${formData.get('referralSource') || 'Not provided'}`,
-      `Venue or location: ${formData.get('location') || 'Not provided yet'}`,
-      `Estimated guest count: ${formData.get('guestCount') || 'Not sure yet'}`,
-      `Floral investment: ${formData.get('floralInvestment') || 'Not provided'}`,
-      `Color, style, or other notes: ${formData.get('notes') || 'None'}`,
-    ].join('\n');
+      `Planning stage: ${formData.get('planningStage') || ''}`,
+      `How did you hear about us?: ${formData.get('referralSource') || ''}`,
+      `Venue or location: ${formData.get('location') || ''}`,
+      `Estimated guest count: ${formData.get('guestCount') || ''}`,
+      `Floral investment: ${formData.get('floralInvestment') || ''}`,
+      `Color, style, or other notes: ${formData.get('notes') || ''}`,
+    ].join('\n\n');
 
     trackEvent('submit_event_inquiry', 'form', {
       event_type: formData.get('eventType'),
     });
 
     window.location.href = buildMailtoLink({
-      subject: 'Small Wedding & Intimate Event Inquiry',
+      subject: 'Event Inquiry',
       body,
     });
   };
