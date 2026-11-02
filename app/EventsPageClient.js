@@ -209,7 +209,7 @@ export default function EventsPageClient() {
               <input name="guestCount" type="number" min="1" max="100" inputMode="numeric" required />
             </label>
             <label className="events-field">
-              <span>Floral investment</span>
+              <span>Floral investment <span aria-hidden="true">*</span></span>
               <select name="floralInvestment" defaultValue="" required>
                 <option value="">Select a range</option>
                 <option value="300-1000">$300 - $1,000</option>

@@ -1228,15 +1228,23 @@ select {
   }
 
   .events-arrangement-row {
-    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.65rem 0.75rem;
+    min-height: 0;
+    padding: 0.85rem;
+  }
+
+  .events-arrangement-info {
+    grid-column: 1 / -1;
   }
 
   .events-quantity {
     gap: 0.3rem;
+    justify-self: end;
   }
 
   .events-line-total {
-    min-width: 3.75rem;
+    min-width: 0;
   }
 
   .service-nav {
