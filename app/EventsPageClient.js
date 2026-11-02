@@ -12,8 +12,8 @@ const arrangementOptions = [
   { id: 'arch', label: 'Arch', price: 2000 },
   { id: 'statement-piece', label: 'Statement piece (bar, welcome)', price: 300 },
   { id: 'centerpiece', label: 'Centerpiece', price: 200 },
-  { id: 'pin-frog-arrangement', label: 'Pin frog arrangement', price: 80 },
-  { id: 'budvases', label: 'Bud vase', price: 30 },
+  { id: 'pin-frog-arrangement', label: 'Pin frog arrangement', price: 50 },
+  { id: 'budvases', label: 'Bud vase', price: 25 },
 ];
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
