@@ -1,7 +1,7 @@
 import EventsPageClient from '../EventsPageClient';
 
 export const metadata = {
-  title: 'Seattle weddings, gatherings, and intimate events - Studio Michi',
+  title: 'Seattle Weddings, Gatherings & Intimate Events - Studio Michi',
   description: '',
   alternates: { canonical: '/seattle-events/' },
 };
