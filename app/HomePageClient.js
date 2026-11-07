@@ -39,13 +39,21 @@ export default function HomePageClient() {
           <p className="brand-slogan">whimsical blooms for everyday moments</p>
           <div className="hero-actions">
             <Link
-              className="button"
+              className="button hero-button-secondary"
+              href="/seattle-events"
+              aria-label="Event inquiry from hero"
+              onClick={() => trackEvent('navigation_click_eventinquiry', 'internal_link', { destination: '/seattle-events' })}
+            >
+              now booking for 2027 &rarr;
+            </Link>
+             {/* <Link
+              className="button hero-button-secondary"
               href="/shop-flowers"
               aria-label="View flower offerings from hero"
               onClick={() => trackEvent('navigation_click_viewflowerofferings', 'internal_link', { destination: '/shop-flowers' })}
             >
               view flower offerings &rarr;
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

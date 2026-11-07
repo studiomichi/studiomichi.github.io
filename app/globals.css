@@ -303,6 +303,7 @@ main {
 
 .hero-actions {
   display: flex;
+  gap: 1rem;
   justify-content: center;
 }
 
@@ -381,10 +382,22 @@ select {
   letter-spacing: 0.04em;
 }
 
+.hero-actions .hero-button-primary {
+  background: var(--color-action);
+  color: var(--color-white);
+  border-color: var(--color-action);
+}
+
 .hero-actions .button:hover {
   background: rgba(255, 255, 255, 0.96);
   color: var(--color-accent-strong);
   box-shadow: 0 14px 28px rgba(95, 72, 52, 0.14);
+}
+
+.hero-actions .hero-button-primary:hover {
+  background: var(--color-action-hover);
+  color: var(--color-white);
+  border-color: var(--color-action-hover);
 }
 
 .home-gallery {
