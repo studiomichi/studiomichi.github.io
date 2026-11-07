@@ -6,12 +6,12 @@ import { buildMailtoLink, studioEmailAddress } from './utils/contactEmail';
 const arrangementOptions = [
   { id: 'bouquet', label: 'Bouquet', price: 275 },
   { id: 'boutonniere', label: 'Boutonniere', price: 30 },
-  { id: 'wedding-party-bouquet', label: 'Wedding party bouquet', price: 125 },
+  { id: 'wedding-party-bouquet', label: 'Wedding party bouquet', price: 150 },
   { id: 'aisle-piece', label: 'Aisle piece', price: 250 },
   { id: 'ground meadow', label: 'Ground meadow', price: 1500 },
   { id: 'arch', label: 'Arch', price: 2000 },
-  { id: 'statement-piece', label: 'Statement piece (bar, welcome)', price: 300 },
-  { id: 'centerpiece', label: 'Centerpiece', price: 200 },
+  { id: 'statement-piece', label: 'Statement piece (bar, welcome)', price: 250 },
+  { id: 'centerpiece', label: 'Centerpiece', price: 225 },
   { id: 'pin-frog-arrangement', label: 'Pin frog arrangement', price: 50 },
   { id: 'budvases', label: 'Bud vase', price: 25 },
 ];
@@ -245,8 +245,8 @@ export default function EventsPageClient() {
           <h2 id="events-calculator-title">Floral estimator</h2>
           <p>
             Choose the quantities you're considering to see a rough estimate
-            based on the minimum listed price for each piece. Prices are not personalized and do
-            not include tax or delivery, so your final proposal may differ from
+            based on the average listed price for each piece. Prices are not personalized and do
+            not include taxs or delivery, so your final proposal may differ from
             this estimate.
           </p>
         </div>
@@ -257,7 +257,7 @@ export default function EventsPageClient() {
               <div className="events-arrangement-row" key={id}>
                 <div className="events-arrangement-info">
                   <span>{label}</span>
-                  <small>From {currencyFormatter.format(price)} each</small>
+                  <small>Average {currencyFormatter.format(price)}/each</small>
                 </div>
                 <div className="events-quantity">
                   <button
@@ -296,7 +296,7 @@ export default function EventsPageClient() {
               <span>{currencyFormatter.format(laborCost)}</span>
             </div>
             <div className="events-total">
-              <span>Minimum estimate</span>
+              <span>Average estimate</span>
               <strong>{currencyFormatter.format(estimatedTotal)}</strong>
             </div>
           </div>
