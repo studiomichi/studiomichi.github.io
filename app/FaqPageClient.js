@@ -73,7 +73,7 @@ const faqSections = [
       },
       {
         question: 'How does the floral estimator work?',
-        answer: 'The estimator provides a rough estimate based on minimum listed prices for the floral pieces selected, including labor. Prices are not personalized and do not include tax or delivery, so your final proposal may differ from this estimate. It\'s meant to give you a general idea of the cost for your event flowers.',
+        answer: 'The estimator provides a rough estimate based on the averagelisted prices for the floral pieces selected, including labor. Prices are not personalized and do not include tax or delivery, so your final proposal may differ from this estimate. It\'s meant to give you a general idea of the cost for your event flowers.',
       },
       {
         question: 'What type of events do you design for?',

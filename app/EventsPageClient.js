@@ -123,7 +123,7 @@ export default function EventsPageClient() {
           <li>
             <h3>Proposal</h3>
             <p>
-              We'll email you a personalized floral proposal with the floral details and prices within 3 business days. A complimentary one-on-one call to go over the proposal is available upon request. Your date is held for 7 days after receiving your proposal.
+              We'll email you a personalized floral proposal and contract with floral details and prices, including a brief moodboard, within 3 business days. A complimentary one-on-one call to go over the proposal is available upon request. Your date is held for 7 days after receiving your proposal.
             </p>
           </li>
           <li>
@@ -135,7 +135,7 @@ export default function EventsPageClient() {
           <li>
             <h3>Celebrate</h3>
             <p>
-              We'll handle the floral details and work with your planner or vendors, and we'll be available to answer any questions leading up to your event. On the day of the event, we'll manage set-up, installation and tear-down (as needed) so you can enjoy your day!
+              You'll get a more detailed floral moodboard specific to your venue and we'll handle the floral details and work with your planner or vendors. We'll be available to answer any questions leading up to your event. On the day of the event, we'll manage set-up, installation and tear-down (as needed) so you can enjoy your day!
             </p>
           </li>
         </ol>
@@ -246,7 +246,7 @@ export default function EventsPageClient() {
           <p>
             Choose the quantities you're considering to see a rough estimate
             based on the average listed price for each piece. Prices are not personalized and do
-            not include taxs or delivery, so your final proposal may differ from
+            not include taxes or delivery, so your final proposal may differ from
             this estimate.
           </p>
         </div>
