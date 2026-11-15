@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { buildMailtoLink, studioEmailAddress } from './utils/contactEmail';
 
 const arrangementOptions = [
@@ -14,6 +14,71 @@ const arrangementOptions = [
   { id: 'centerpiece', label: 'Centerpiece', price: 225 },
   { id: 'pin-frog-arrangement', label: 'Pin frog arrangement', price: 50 },
   { id: 'budvases', label: 'Bud vase', price: 25 },
+];
+
+const inquirySteps = [
+  { name: 'name', label: 'Name', autoComplete: 'name', required: true },
+  { name: 'email', label: 'Email', type: 'email', autoComplete: 'email', required: true },
+  { name: 'phone', label: 'Phone', type: 'tel', autoComplete: 'tel' },
+  { name: 'eventDate', label: 'Event date', type: 'date', required: true },
+  {
+    name: 'eventType',
+    label: 'Type of event',
+    required: true,
+    placeholder: 'Select an event type',
+    options: [
+      ['Intimate wedding', 'Intimate wedding (50 or fewer guests)'],
+      ['Elopement', 'Elopement'],
+      ['Engagement photoshoot', 'Engagement photoshoot'],
+      ['Private event', 'Private event'],
+      ['Other', 'Other'],
+    ],
+  },
+  { name: 'location', label: 'Event/venue location', autoComplete: 'street-address', required: true },
+  {
+    name: 'planningStage',
+    label: 'Where are you in the planning process?',
+    required: true,
+    placeholder: 'Select a planning stage',
+    options: [
+      ['Just starting to explore', 'Just starting to explore prices'],
+      ['Date and venue are booked', 'Comparing between a few florists'],
+      ['Actively planning the details', 'Ready to book!'],
+    ],
+  },
+  {
+    name: 'referralSource',
+    label: 'How did you hear about us?',
+    required: true,
+    placeholder: 'Select a referral source',
+    options: [
+      ['Google', 'Google'],
+      ['Instagram', 'Instagram'],
+      ['Pinterest', 'Pinterest'],
+      ['Tiktok', 'Tiktok'],
+      ['Word of mouth', 'Word of mouth'],
+      ['Other', 'Other'],
+    ],
+  },
+  { name: 'guestCount', label: 'Approximate guest count', type: 'number', min: 1, max: 100, required: true },
+  {
+    name: 'floralInvestment',
+    label: 'Floral investment',
+    required: true,
+    placeholder: 'Select a range',
+    options: [
+      ['300-1000', '$300 - $1,000'],
+      ['1000-2000', '$1,000 - $2,000'],
+      ['2000-5000', '$2,000 - $5,000'],
+      ['5000+', '$5,000+'],
+    ],
+  },
+  {
+    name: 'notes',
+    label: 'Other details',
+    type: 'textarea',
+    placeholder: "Share your stylistic direction, color palette, floral pieces you're looking for, or any questions you have.",
+  },
 ];
 
 const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -42,9 +107,40 @@ function getLocalDateValue() {
 }
 
 export default function EventsPageClient() {
+  const processListRef = useRef(null);
+  const formFieldRef = useRef(null);
+  const [activeFormStep, setActiveFormStep] = useState(0);
+  const [inquiry, setInquiry] = useState(
+    Object.fromEntries(inquirySteps.map(({ name }) => [name, ''])),
+  );
   const [quantities, setQuantities] = useState(
     Object.fromEntries(arrangementOptions.map(({ id }) => [id, 0])),
   );
+
+  useEffect(() => {
+    if (!window.matchMedia('(max-width: 640px)').matches) return;
+    formFieldRef.current?.focus();
+  }, [activeFormStep]);
+
+  useEffect(() => {
+    const processList = processListRef.current;
+    if (!processList) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { root: processList, threshold: 0.5 },
+    );
+
+    processList.querySelectorAll('li').forEach((step) => observer.observe(step));
+
+    return () => observer.disconnect();
+  }, []);
 
   const getQuantity = (id) => (
     Number.isFinite(quantities[id]) ? quantities[id] : 0
@@ -69,27 +165,102 @@ export default function EventsPageClient() {
   );
   const laborCost = Math.round(floralPiecesSubtotal * 0.3 * 100) / 100;
   const estimatedTotal = floralPiecesSubtotal + laborCost;
+  const currentFormStep = inquirySteps[activeFormStep];
+  const formProgress = Math.round(((activeFormStep + 1) / inquirySteps.length) * 100);
+
+  const updateInquiry = (event) => {
+    const { name, value } = event.target;
+    setInquiry((currentInquiry) => ({ ...currentInquiry, [name]: value }));
+  };
+
+  const renderInquiryField = (step, ref) => (
+    <label className="events-field" key={step.name}>
+      <span>
+        {step.label}
+        {step.required && <span aria-hidden="true"> *</span>}
+      </span>
+      {step.options ? (
+        <select
+          ref={ref}
+          name={step.name}
+          value={inquiry[step.name]}
+          onChange={updateInquiry}
+          required={step.required}
+        >
+          <option value="" disabled>{step.placeholder}</option>
+          {step.options.map(([value, label]) => (
+            <option value={value} key={value}>{label}</option>
+          ))}
+        </select>
+      ) : step.type === 'textarea' ? (
+        <textarea
+          ref={ref}
+          name={step.name}
+          value={inquiry[step.name]}
+          onChange={updateInquiry}
+          rows="5"
+          placeholder={step.placeholder}
+        />
+      ) : (
+        <input
+          ref={ref}
+          name={step.name}
+          type={step.type || 'text'}
+          autoComplete={step.autoComplete}
+          min={step.name === 'eventDate' ? getLocalDateValue() : step.min}
+          max={step.max}
+          inputMode={step.name === 'guestCount' ? 'numeric' : undefined}
+          value={inquiry[step.name]}
+          onChange={updateInquiry}
+          required={step.required}
+        />
+      )}
+    </label>
+  );
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+    if (isMobile && activeFormStep < inquirySteps.length - 1) {
+      if (!formFieldRef.current?.reportValidity()) return;
+      setActiveFormStep((currentStep) => currentStep + 1);
+      return;
+    }
+
+    const invalidField = Array.from(
+      form.querySelectorAll(
+        '.events-form-desktop input, .events-form-desktop select, .events-form-desktop textarea',
+      ),
+    ).find((field) => !field.checkValidity());
+
+    if (invalidField) {
+      if (isMobile) {
+        const stepIndex = inquirySteps.findIndex(({ name }) => name === invalidField.name);
+        if (stepIndex !== -1) setActiveFormStep(stepIndex);
+      } else {
+        invalidField.reportValidity();
+      }
+      return;
+    }
+
     const body = [
-      `Name: ${formData.get('name')}`,
-      `Email: ${formData.get('email')}`,
-      `Phone: ${formData.get('phone') || ''}`,
-      `Event type: ${formData.get('eventType')}`,
-      `Event date: ${formData.get('eventDate')}`,
-      `Planning stage: ${formData.get('planningStage') || ''}`,
-      `How did you hear about us?: ${formData.get('referralSource') || ''}`,
-      `Venue or location: ${formData.get('location') || ''}`,
-      `Estimated guest count: ${formData.get('guestCount') || ''}`,
-      `Floral investment: ${formData.get('floralInvestment') || ''}`,
-      `Color, style, or other notes: ${formData.get('notes') || ''}`,
+      `Name: ${inquiry.name}`,
+      `Email: ${inquiry.email}`,
+      `Phone: ${inquiry.phone}`,
+      `Event type: ${inquiry.eventType}`,
+      `Event date: ${inquiry.eventDate}`,
+      `Planning stage: ${inquiry.planningStage}`,
+      `How did you hear about us?: ${inquiry.referralSource}`,
+      `Venue or location: ${inquiry.location}`,
+      `Estimated guest count: ${inquiry.guestCount}`,
+      `Floral investment: ${inquiry.floralInvestment}`,
+      `Color, style, or other notes: ${inquiry.notes}`,
     ].join('\n\n');
 
     trackEvent('submit_event_inquiry', 'form', {
-      event_type: formData.get('eventType'),
+      event_type: inquiry.eventType,
     });
 
     window.location.href = buildMailtoLink({
@@ -112,7 +283,7 @@ export default function EventsPageClient() {
         <div className="section-header">
           <h2 id="events-process-title">How it works</h2>
         </div>
-        <ol className="events-process-list">
+        <ol className="events-process-list" ref={processListRef}>
           <li>
             <h3>Inquiry</h3>
             <p>
@@ -129,7 +300,7 @@ export default function EventsPageClient() {
           <li>
             <h3>Reservation</h3>
             <p>
-              When you're ready, your date is secured with a 20% non-refundable deposit and a signed contract.
+              When you're ready, your date is secured with a 20% non-refundable deposit (or $500, whichever is lower) and a signed contract.
             </p>
           </li>
           <li>
@@ -150,92 +321,56 @@ export default function EventsPageClient() {
           </p>
         </div>
 
-        <form className="events-form" onSubmit={handleSubmit}>
-          <div className="events-form-grid">
-            <label className="events-field">
-              <span>Name <span aria-hidden="true">*</span></span>
-              <input autoComplete="name" name="name" required />
-            </label>
-            <label className="events-field">
-              <span>Email <span aria-hidden="true">*</span></span>
-              <input autoComplete="email" name="email" type="email" required />
-            </label>
-            <label className="events-field">
-              <span>Phone</span>
-              <input autoComplete="tel" name="phone" type="tel" />
-            </label>
-            <label className="events-field">
-              <span>Event date <span aria-hidden="true">*</span></span>
-              <input name="eventDate" type="date" min={getLocalDateValue()} required />
-            </label>
-            <label className="events-field">
-              <span>Type of event <span aria-hidden="true">*</span></span>
-              <select name="eventType" defaultValue="" required>
-                <option value="" disabled>Select an event type</option>
-                <option value="Intimate wedding">Intimate wedding (50 or fewer guests)</option>
-                <option value="Elopement">Elopement</option>
-                <option value="Engagement photoshoot">Engagement photoshoot</option>
-                <option value="Private event">Private event</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
-            <label className="events-field">
-              <span>Event/venue location <span aria-hidden="true">*</span></span>
-              <input autoComplete="street-address" name="location" required />
-            </label>
-            <label className="events-field">
-              <span>Where are you in the planning process? <span aria-hidden="true">*</span></span>
-              <select name="planningStage" defaultValue="" required>
-                <option value="">Select a planning stage</option>
-                <option value="Just starting to explore">Just starting to explore prices</option>
-                <option value="Date and venue are booked">Comparing between a few florists</option>
-                <option value="Actively planning the details">Ready to book!</option>
-              </select>
-            </label>
-            <label className="events-field">
-              <span>How did you hear about us? <span aria-hidden="true">*</span></span>
-              <select name="referralSource" defaultValue="" required>
-                <option value="">Select a referral source</option>
-                <option value="Google">Google</option>
-                <option value="Instagram">Instagram</option>
-                <option value="Pinterest">Pinterest</option>
-                <option value="Tiktok">Tiktok</option>
-                <option value="Word of mouth">Word of mouth</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
-            <label className="events-field">
-              <span>Approximate guest count <span aria-hidden="true">*</span></span>
-              <input name="guestCount" type="number" min="1" max="100" inputMode="numeric" required />
-            </label>
-            <label className="events-field">
-              <span>Floral investment <span aria-hidden="true">*</span></span>
-              <select name="floralInvestment" defaultValue="" required>
-                <option value="">Select a range</option>
-                <option value="300-1000">$300 - $1,000</option>
-                <option value="1000-2000">$1,000 - $2,000</option>
-                <option value="2000-5000">$2,000 - $5,000</option>
-                <option value="5000+">$5,000+</option>
-              </select>
-            </label>
+        <form className="events-form" onSubmit={handleSubmit} noValidate>
+          <div className="events-form-desktop">
+            <div className="events-form-grid">
+              {inquirySteps.slice(0, -1).map((step) => renderInquiryField(step))}
+            </div>
+            {renderInquiryField(inquirySteps[inquirySteps.length - 1])}
+            <div className="events-form-submit">
+              <button className="button" type="submit">Prepare inquiry email</button>
+              <p>
+                This opens your email app with the inquiry details for you to
+                review and send. You can also email us at{' '}
+                <a href={`mailto:${studioEmailAddress}`}>{studioEmailAddress}</a>.
+              </p>
+            </div>
           </div>
 
-          <label className="events-field">
-            <span>Other details</span>
-            <textarea
-              name="notes"
-              rows="5"
-              placeholder="Share your stylistic direction, color palette, floral pieces you're looking for, ins or any questions you have."
-            />
-          </label>
-
-          <div className="events-form-submit">
-            <button className="button" type="submit">Prepare inquiry email</button>
-            <p>
-              This opens your email app with the inquiry details for you to
-              review and send. You can also email us at{' '}
-              <a href={`mailto:${studioEmailAddress}`}>{studioEmailAddress}</a>.
-            </p>
+          <div className="events-form-mobile">
+            <div
+              className="events-form-progress-track"
+              role="progressbar"
+              aria-label="Inquiry form progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={formProgress}
+              aria-valuetext={`${formProgress}% complete`}
+            >
+              <span style={{ width: `${formProgress}%` }} />
+            </div>
+            {renderInquiryField(currentFormStep, formFieldRef)}
+            <div className="events-form-submit">
+              <div className="events-form-navigation">
+                {activeFormStep > 0 && (
+                  <button
+                    className="button events-form-back"
+                    type="button"
+                    onClick={() => setActiveFormStep((currentStep) => currentStep - 1)}
+                  >
+                    Back
+                  </button>
+                )}
+                <button className="button" type="submit">
+                  {activeFormStep === inquirySteps.length - 1 ? 'Prepare email' : 'Continue'}
+                </button>
+              </div>
+              <p>
+                This opens your email app with the inquiry details for you to
+                review and send. You can also email us at{' '}
+                <a href={`mailto:${studioEmailAddress}`}>{studioEmailAddress}</a>.
+              </p>
+            </div>
           </div>
         </form>
       </section>
@@ -246,7 +381,7 @@ export default function EventsPageClient() {
           <p>
             Choose the quantities you're considering to see a rough estimate
             based on the average listed price for each piece. Prices are not personalized and do
-            not include taxes or delivery, so your final proposal may differ from
+            not include taxes, delivery or operational fees, so your final proposal may differ from
             this estimate.
           </p>
         </div>

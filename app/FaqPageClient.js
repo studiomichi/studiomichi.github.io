@@ -73,7 +73,7 @@ const faqSections = [
       },
       {
         question: 'How does the floral estimator work?',
-        answer: 'The estimator provides a rough estimate based on the averagelisted prices for the floral pieces selected, including labor. Prices are not personalized and do not include tax or delivery, so your final proposal may differ from this estimate. It\'s meant to give you a general idea of the cost for your event flowers.',
+        answer: 'The estimator provides a rough estimate based on the averagelisted prices for the floral pieces selected, including labor. Prices are not personalized and do not include tax, delivery or operational fees, so your final proposal may differ from this estimate. It\'s meant to give you a general idea of the cost for your event flowers.',
       },
       {
         question: 'What type of events do you design for?',
@@ -81,7 +81,7 @@ const faqSections = [
       },
       {
         question: 'What locations do you serve?',
-        answer: 'We offer floral design for intimate gatherings and events in and around the Seattle area, including Shoreline, Kirkland, Ballard, West Seattle, Bellevue, Redmond, Renton, Kent, etc. If your event is outside of the Seattle area, please reach out to us and we\'ll do our best to accommodate your event. We also offer pick-up for personal flowers.',
+        answer: 'We offer floral design for intimate gatherings and events in and around the Seattle area, including Shoreline, Kirkland, Ballard, West Seattle, Bellevue, Redmond, Renton, Kent, etc. For travel over 20+ miles outside of our studio, a $2/mile fee applies. If your event is outside of the Seattle area, please reach out to us and we\'ll do our best to accommodate your event. We also offer pick-up for personal flowers.',
       },
     ],
   },
