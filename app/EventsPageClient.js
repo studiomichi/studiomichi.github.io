@@ -17,13 +17,13 @@ const arrangementOptions = [
 ];
 
 const inquirySteps = [
-  { name: 'name', label: 'Name', autoComplete: 'name', required: true },
+  { name: 'name', label: 'Full name', autoComplete: 'name', required: true },
   { name: 'email', label: 'Email', type: 'email', autoComplete: 'email', required: true },
   { name: 'phone', label: 'Phone', type: 'tel', autoComplete: 'tel' },
   { name: 'eventDate', label: 'Event date', type: 'date', required: true },
   {
     name: 'eventType',
-    label: 'Type of event',
+    label: 'Event type',
     required: true,
     placeholder: 'Select an event type',
     options: [
@@ -59,6 +59,13 @@ const inquirySteps = [
       ['Word of mouth', 'Word of mouth'],
       ['Other', 'Other'],
     ],
+  },
+  {
+    name: 'planner',
+    label: 'Your event planner\'s name and contact',
+    required: true,
+    type: 'text',
+    placeholder: "Your planner's name and website or social media handle.",
   },
   { name: 'guestCount', label: 'Approximate guest count', type: 'number', min: 1, max: 100, required: true },
   {
@@ -252,6 +259,7 @@ export default function EventsPageClient() {
       `Event type: ${inquiry.eventType}`,
       `Event date: ${inquiry.eventDate}`,
       `Planning stage: ${inquiry.planningStage}`,
+      `Planner: ${inquiry.planner}`,
       `How did you hear about us?: ${inquiry.referralSource}`,
       `Venue or location: ${inquiry.location}`,
       `Estimated guest count: ${inquiry.guestCount}`,
